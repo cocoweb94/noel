@@ -19,7 +19,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/boutique", name="boutique")
+     * @Route("/boutique", name="shop")
      */
     public function boutique(Request $request): Response
     {
@@ -27,7 +27,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/contact", name="message")
      */
     public function contact(Request $request): Response
     {
