@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/boutique", name="shop")
      */
-    public function boutique(Request $request): Response
+    public function boutiqueShop(Request $request): Response
     {
         return $this->render('boutique.html.twig', []);
     }
@@ -29,7 +29,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/contact", name="message")
      */
-    public function contact(Request $request): Response
+    public function contactMessage(Request $request): Response
     {
         return $this->render('contact.html.twig', []);
     }
