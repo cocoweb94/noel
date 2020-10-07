@@ -17,4 +17,20 @@ class DefaultController extends AbstractController
     {
         return $this->render('index.html.twig', []);
     }
+
+    /**
+     * @Route("/boutique", name="boutique")
+     */
+    public function boutique(Request $request): Response
+    {
+        return $this->render('boutique.html.twig', []);
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact(Request $request): Response
+    {
+        return $this->render('contact.html.twig', []);
+    }
 }
