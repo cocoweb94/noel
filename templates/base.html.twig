@@ -18,6 +18,9 @@
 
             <link href="{{ asset('css/fwslider.css') }}" media="all" rel="stylesheet" type="text/css"/>
 
+            <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('js/fwslider.js') }}"></script>
+
         {% endblock %}
 
     </head>
@@ -25,8 +28,7 @@
         {% block body %}{% endblock %}
         {% block javascripts %}
             <!--start slider -->
-            <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-            <script src="{{ asset('js/fwslider.js') }}"></script>
+
             <!--end slider -->
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
