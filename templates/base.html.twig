@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         {% block stylesheets %}
-            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-            <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
-            <link href="{{ asset('css/fwslider.css') }}" media="all" />
-
             <!-- MAIN CSS -->
             <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <link href="{{ asset('css/fwslider.css') }}" media="all" />
+
+
         {% endblock %}
+
     </head>
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
             <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
             <script src="{{ asset('js/fwslider.js') }}"></script>
             <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
+
     </body>
 </html>
