@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\Type\ContactType;
 
 
 class DefaultController extends AbstractController
@@ -19,18 +20,28 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/boutique", name="shop")
+     * @Route("/boutique", name="boutique")
      */
-    public function boutiqueShop(Request $request): Response
+    public function boutique(Request $request): Response
     {
         return $this->render('boutique.html.twig', []);
     }
 
     /**
-     * @Route("/contact", name="message")
+     * @Route("/contact", name="contact")
      */
-    public function contactMessage(Request $request): Response
+    public function contact(Request $request): Response
     {
-        return $this->render('contact.html.twig', []);
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $reqPost = $form->getData();
+            /*$mail = new Mail($reqPost["email"], $reqPost);
+            $sendMail = $mail->sendContactMail();
+            $mailer->send($sendMail);*/
+        }
+        return $this->render('contact.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }

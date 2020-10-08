@@ -29,7 +29,37 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 contact">
-                        <form method="post" action="contact-post.html">
+
+                        {{ form_start(form, {'action': path('contact'), 'method': 'POST', 'name': 'form'}) }}
+                            <div class="my-custom-class-for-errors">
+                                {{ form_errors(form) }}
+                            </div>
+
+                            <div class="to">
+                                    {{ form_row(form.nom) }}
+
+                                    {{ form_row(form.prenom) }}
+
+                                    {{ form_row(form.email) }}
+
+                            </div>
+                            <div class="text">
+                                {{ form_row(form.message) }}
+                                <div class="form-submit">
+                                {{ form_row(form.save) }}
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        {{ form_end(form) }}
+
+
+
+
+
+
+
+
+                        <!--<form method="post" action="contact-post.html">
                             <div class="to">
                                 <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
                                 <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
@@ -42,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="clear"></div>
-                        </form>
+                        </form>-->
                     </div>
                 </div>
             </div>
