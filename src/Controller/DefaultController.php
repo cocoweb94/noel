@@ -36,6 +36,7 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $reqPost = $form->getData();
+            var_dump($reqPost);die;
             /*$mail = new Mail($reqPost["email"], $reqPost);
             $sendMail = $mail->sendContactMail();
             $mailer->send($sendMail);*/

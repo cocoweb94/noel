@@ -36,8 +36,6 @@ class ContactType extends AbstractType
                     new NotBlank(),
                 ],
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Ecrivez votre message', 'cols' => '30', 'rows' => '10'],
-            ])
-            ->add('save', SubmitType::class, ['label' => 'Envoyer',
-                'attr' => ['class' => 'btn btn-block btn-primary text-white py-3 px-5']]);
+            ]);
     }
 }
