@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\Type\ContactType;
+use App\Entity\Product;
 
 
 class DefaultController extends AbstractController
@@ -24,6 +25,9 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+        $products = $repository->findAll();
+        var_dump($products);die;
         return $this->render('boutique.html.twig', []);
     }
 
