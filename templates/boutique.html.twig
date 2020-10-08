@@ -1,0 +1,132 @@
+{# templates/default/boutique.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <div class="main">
+        <div class="shop_top">
+            <div class="container">
+                <div class="row" style="margin-bottom: 5%;">
+
+                    {% for product in products %}
+                        <div>{{ loop.index }}</div>
+                        <div>{{ product.name|e }}</div>
+                    {% else %}
+                        <div><em>no user found</em></div>
+                    {% endfor %}
+
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                            <img src="images/product1.jpg" class="img-responsive" alt=""/>
+                            <div class="shop_desc">
+                                <h3><a href="#">Seau p&egrave;re no&euml;l</a></h3>
+                                <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                <span class="actual">8.00&euro;</span><br>
+                                <ul class="buttons">
+                                    <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                    <div class="clear"> </div>
+                                </ul>
+                            </div>
+                        </a></div>
+
+
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product2.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Pomme de pain ski</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">2.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product3.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Coeur de porte</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">5.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product4.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Baluchon p&egrave;re no&euml;l;l</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">1.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product5.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Lutins carton</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">2.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product6.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Lutin pomme de pain</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">4.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product7.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">Lutins r&eacute;sine</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">15.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                    <div class="col-md-3 shop_box"><a href="single.html">
+                                <img src="images/product8.jpg" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3><a href="#">D&eacute;co sapin</a></h3>
+                                    <p>Construit pour vos d&eacute;coration de no&euml;l en famille </p>
+                                    <span class="actual">2.00&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            </a></div>
+                </div>
+                <ul class="pagination">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html.twig' %}
+{% endblock %}
