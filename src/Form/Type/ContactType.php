@@ -31,6 +31,12 @@ class ContactType extends AbstractType
                 'required'   => false,
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Email', "pattern" => "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$"],
             ])
+            ->add('obj', TextType::class, [
+                'constraints' => [
+                    new NotBlank(),
+                ],
+                'attr' => ['class' => 'form-control', 'placeholder' => 'Sujet'],
+            ])
             ->add('message', TextareaType::class, [
                 'constraints' => [
                     new NotBlank(),
