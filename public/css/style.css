@@ -1232,6 +1232,22 @@ p.m_8{
 .to input[type="text"]:hover, .text input[type="text"], .text textarea:hover{
 	border-color:#E25050;
 }
+.to input[type="email"] {
+	padding: 10px;
+	width:95%;
+	font-size: 0.85em;
+	font-family: 'Open Sans', sans-serif;
+	margin: 10px 0;
+	border: none;
+	color: #888;
+	background:#F8F8F8;
+	float: left;
+	outline: none;
+	border:1px solid #DFE0E2;
+}
+.to input[type="email"]:hover, .text input[type="email"], .text textarea:hover{
+	border-color:#E25050;
+}
 .text {
 	width:50%;
 	float:left;
