@@ -46,14 +46,9 @@ class Order
     private $payment;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Product", inversedBy="orders")
+     * @ORM\OneToMany(targetEntity="OrderProduct", mappedBy="order", fetch="EXTRA_LAZY")
      */
-    private $products;
-
-    public function __construct()
-    {
-        $this->products = new ArrayCollection();
-    }
+    private $productsOrder;
 
     public function getId(): ?int
     {
@@ -117,28 +112,6 @@ class Order
     {
         $this->payment = $payment;
 
-        return $this;
-    }
-
-    /**
-     * @return Collection|Product[]
-     */
-        public function getProducts(): Collection
-    {
-        return $this->products;
-    }
-        public function addProduct(Product $product): self
-    {
-        if (!$this->products->contains($product)) {
-            $this->products[] = $product;
-        }
-        return $this;
-    }
-        public function removeProduct(Product $product): self
-    {
-        if ($this->products->contains($product)) {
-            $this->products->removeElement($product);
-        }
         return $this;
     }
 }

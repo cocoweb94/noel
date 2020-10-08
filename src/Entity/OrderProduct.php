@@ -12,28 +12,36 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
  */
 class OrderProduct
 {
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
 
     /**
-     * @ORM\Id()
-     * @ORM\ManyToOne(targetEntity="Order", inversedBy="products")
-     * @ORM\JoinColumn(name="order_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Order", inversedBy="productsOrder")
+     * @ORM\JoinColumn(nullable=false)
      */
-    protected $order;
+    private $order;
 
     /**
-     * @ORM\Id()
-     * @ORM\ManyToOne(targetEntity="Product", inversedBy="orders")
-     * @ORM\JoinColumn(name="product_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="productOrders")
+     * @ORM\JoinColumn(nullable=false)
      */
-    protected $product;
+    private $product;
 
     /**
      * @ORM\Column(name="amount", type="integer", nullable=false, options={"default": 1})
      */
     protected $amount;
 
+    public function getId()
+    {
+        return $this->id;
+    }
 
-    public function setOrder(Order $order = null)
+    public function setOrder(Order $order)
     {
         $this->order = $order;
 
@@ -45,7 +53,7 @@ class OrderProduct
         return $this->order;
     }
 
-    public function setProduct(Product $product = null)
+    public function setProduct(Product $product)
     {
         $this->product = $product;
 

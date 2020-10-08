@@ -49,14 +49,9 @@ class Product
     private $stock;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Order", mappedBy="products")
+     * @ORM\OneToMany(targetEntity="OrderProduct", mappedBy="product", fetch="EXTRA_LAZY")
      */
-    private $orders;
-
-    public function __construct()
-    {
-        $this->orders = new ArrayCollection();
-    }
+    private $productOrders;
 
     public function getId(): ?int
     {
