@@ -47,6 +47,16 @@ class Product
      */
     private $stock;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Order", mappedBy="products")
+     */
+    private $orders;
+
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
