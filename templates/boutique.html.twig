@@ -9,6 +9,14 @@
         <div class="shop_top">
             <div class="container">
                 <div class="row" style="margin-bottom: 5%;">
+
+                    {% for product in products %}
+                        <div>{{ loop.index }}</div>
+                        <div>{{ product.name|e }}</div>
+                    {% else %}
+                        <div><em>no user found</em></div>
+                    {% endfor %}
+
                     <div class="col-md-3 shop_box"><a href="single.html">
                             <img src="images/product1.jpg" class="img-responsive" alt=""/>
                             <div class="shop_desc">
@@ -21,6 +29,8 @@
                                 </ul>
                             </div>
                         </a></div>
+
+
                     <div class="col-md-3 shop_box"><a href="single.html">
                                 <img src="images/product2.jpg" class="img-responsive" alt=""/>
                                 <div class="shop_desc">

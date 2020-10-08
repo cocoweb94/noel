@@ -27,8 +27,9 @@ class DefaultController extends AbstractController
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
         $products = $repository->findAll();
-        var_dump($products);die;
-        return $this->render('boutique.html.twig', []);
+        return $this->render('boutique.html.twig', [
+            'products' => $products,
+        ]);
     }
 
     /**
