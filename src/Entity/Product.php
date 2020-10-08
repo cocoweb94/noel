@@ -49,7 +49,7 @@ class Product
     private $stock;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\OrderProduct", mappedBy="products")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Order", mappedBy="products")
      */
     private $orders;
 
