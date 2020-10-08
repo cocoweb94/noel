@@ -7,11 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 /**
  * Product Relation order
  *
- * @ORM\Table(name="order_products")
+ * @ORM\Table(name="order_product")
  * @ORM\Entity
  */
 class OrderProduct
 {
+
     /**
      * @ORM\Id()
      * @ORM\ManyToOne(targetEntity="Order", inversedBy="products")
