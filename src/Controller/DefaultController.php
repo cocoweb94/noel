@@ -29,6 +29,8 @@ class DefaultController extends AbstractController
         if(!isset($_COOKIE["commande"]))
             $_COOKIE["commande"] = "[]";
 
+        var_dump($_COOKIE["commande"]);
+
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
             $page = 1;

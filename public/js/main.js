@@ -16,7 +16,7 @@ $(document).ready(function() {
 		var id = $(this).data("id");
 		alert(id);
 		var commande = $.cookie("commande");
-		alert($.cookie("commande"));
+		alert($.cookie());
 		var tabCommande = JSON.parse(commande);
 		tabCommande[id] = 1;
 		$.cookie("commande", JSON.stringify(tabCommande));
