@@ -15,6 +15,7 @@ $(document).ready(function() {
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 		alert(id);
+		alert(id);
 		var commande = $.cookie("commande");
 		alert($.cookie());
 		var tabCommande = JSON.parse(commande);
