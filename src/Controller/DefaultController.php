@@ -31,6 +31,7 @@ class DefaultController extends AbstractController
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
+            ->setMaxResults(8)
             //->orderBy('p.price', 'ASC')
             ->getQuery();
 
