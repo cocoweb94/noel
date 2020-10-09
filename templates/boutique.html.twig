@@ -34,11 +34,9 @@
                     {% endfor %}
                 </div>
                 <ul class="pagination">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    {% for i in 0..page %}
+                        <li><a href="{{ path('boutique', { 'page': i}) }}">{{ i }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
