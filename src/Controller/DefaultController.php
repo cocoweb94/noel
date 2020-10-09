@@ -50,8 +50,9 @@ class DefaultController extends AbstractController
             ->getQuery();
 
         $countProducts = $queryCount->getResult();
-        var_dump(count($countProducts));die;
+        $countPage = count($countProducts) / getenv('LIMIT');
 
+        var_dump($countPage);die;
         return $this->render('boutique.html.twig', [
             'products' => $products,
         ]);
