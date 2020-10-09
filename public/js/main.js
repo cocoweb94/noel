@@ -14,7 +14,11 @@ $(document).ready(function() {
 
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
-		alert(id);
+		var commande = Cookies.get('commande');
+		var tabCommande = jQuery.parseJSON(commande);
+
+		Cookies.set('commande', commande);
+		alert(commande);
 	});
 
 
