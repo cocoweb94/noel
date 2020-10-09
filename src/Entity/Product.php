@@ -52,77 +52,77 @@ class Product
      */
     private $productOrders;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name)
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(string $description)
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getPhoto(): ?string
+    public function getPhoto()
     {
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): self
+    public function setPhoto(string $photo)
     {
         $this->photo = $photo;
 
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice()
     {
         return $this->price;
     }
 
-    public function setPrice(float $price): self
+    public function setPrice(float $price)
     {
         $this->price = $price;
 
         return $this;
     }
 
-    public function getBuilder(): ?string
+    public function getBuilder()
     {
         return $this->builder;
     }
 
-    public function setBuilder(?string $builder): self
+    public function setBuilder(string $builder)
     {
         $this->builder = $builder;
 
         return $this;
     }
 
-    public function getStock(): ?int
+    public function getStock()
     {
         return $this->stock;
     }
 
-    public function setStock(int $stock): self
+    public function setStock(int $stock)
     {
         $this->stock = $stock;
 

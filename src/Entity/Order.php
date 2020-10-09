@@ -48,65 +48,65 @@ class Order
      */
     private $productsOrder;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name)
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getLastName()
     {
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName): self
+    public function setLastName(string $lastName)
     {
         $this->lastName = $lastName;
 
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $email)
     {
         $this->email = $email;
 
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice()
     {
         return $this->price;
     }
 
-    public function setPrice(float $price): self
+    public function setPrice(float $price)
     {
         $this->price = $price;
 
         return $this;
     }
 
-    public function getPayment(): ?string
+    public function getPayment()
     {
         return $this->payment;
     }
 
-    public function setPayment(string $payment): self
+    public function setPayment(string $payment)
     {
         $this->payment = $payment;
 
