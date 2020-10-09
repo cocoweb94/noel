@@ -40,14 +40,12 @@ $(document).ready(function() {
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 		alert(id);
-		var commande = $.cookie();
-		var tabCommande = $.parseJSON(commande);
 
-		alert(commande);
+		var tabCommande = $.parseJSON($("#jsonCommande").val());
 		alert(tabCommande);
 		tabCommande[id] = 1;
-		$.cookie("commande", JSON.stringify(tabCommande));
-		alert($.cookie("commande"));
+		$("#jsonCommande").prop('value', JSON.stringify(tabCommande));
+		alert($("#jsonCommande").val());
 	});
 
 
