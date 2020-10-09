@@ -39,11 +39,14 @@ $(document).ready(function() {
 
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
-		alert(id);
 
 		var tabCommande = $.parseJSON($("#commande").val());
-		alert(tabCommande);
-		tabCommande[id] = 1;
+		if(id in tabCommande){
+			tabCommande[id] = tabCommande[id] + 1;
+		} else{
+			tabCommande[id] = 1;
+		}
+
 		$("#commande").prop('value', JSON.stringify(tabCommande));
 		alert($("#commande").val());
 	});
