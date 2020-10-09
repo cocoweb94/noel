@@ -24,9 +24,9 @@
                                 </div>
                             </a></div>
 
-                        {% if loop.index = 4 %}
+                        {% if loop.index is divisible by(4) %}
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-bottom: 5%;">
                         {% endif %}
                     {% else %}
                         <div><em>Nous n'avons plus de marchandise en stock pour le moment, désolé.</em></div>
