@@ -41,11 +41,11 @@ $(document).ready(function() {
 		var id = $(this).data("id");
 		alert(id);
 
-		var tabCommande = $.parseJSON($("#jsonCommande").val());
+		var tabCommande = $.parseJSON($("#commande").val());
 		alert(tabCommande);
 		tabCommande[id] = 1;
-		$("#jsonCommande").prop('value', JSON.stringify(tabCommande));
-		alert($("#jsonCommande").val());
+		$("#commande").prop('value', JSON.stringify(tabCommande));
+		alert($("#commande").val());
 	});
 
 
