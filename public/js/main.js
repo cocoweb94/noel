@@ -16,8 +16,8 @@ $(document).ready(function() {
 		var id = $(this).data("id");
 		var commande = Cookies.get('commande');
 		var tabCommande = jQuery.parseJSON(commande);
-
-		Cookies.set('commande', commande);
+		tabCommande[id] = 1;
+		Cookies.set('commande', JSON.stringify(tabCommande));
 		alert(commande);
 	});
 
