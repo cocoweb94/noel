@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 
 /**
  * @ORM\Table(name="`product`")
+ * @ORM\Entity
  */
 class Product
 {

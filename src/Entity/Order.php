@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection as Collection;
 
 /**
  * @ORM\Table(name="`order`")
+ * @ORM\Entity
  */
 class Order
 {
