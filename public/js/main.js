@@ -12,7 +12,7 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	$("#addproduct").click(function() {
+	$(".cart").click(function() {
 		var id = $(this).data("id");
 		alert(id);
 	});
