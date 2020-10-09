@@ -2,13 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\OrderRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Doctrine\Common\Collections\Collection as Collection;
 
 /**
- * @ORM\Entity(repositoryClass=OrderRepository::class)
  * @ORM\Table(name="`order`")
  */
 class Order
