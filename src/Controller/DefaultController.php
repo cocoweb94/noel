@@ -31,9 +31,11 @@ class DefaultController extends AbstractController
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
+            ->setFirstResult((2 - 1) * 8)
             ->setMaxResults(8)
             //->orderBy('p.price', 'ASC')
             ->getQuery();
+        //return new Paginator($query);
 
         $products = $query->getResult();
         return $this->render('boutique.html.twig', [
