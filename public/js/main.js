@@ -12,6 +12,12 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
+	$("#addproduct").click(function() {
+		var id = $(this).data("id");
+		alert(id);
+	});
+
+
 	function getSelectedValue(id) {
 		return $("#" + id).find("dt a span.value").html();
 	}
