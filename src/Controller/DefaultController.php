@@ -50,7 +50,7 @@ class DefaultController extends AbstractController
             ->getQuery();
 
         $countProducts = $queryCount->getResult();
-        var_dump($countProducts);die;
+        var_dump(count($countProducts));die;
 
         return $this->render('boutique.html.twig', [
             'products' => $products,
