@@ -26,9 +26,10 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
-        var_dump($_COOKIE);
-        $cookie = new Cookie('commande', '[]', strtotime('now + 10 minutes'));
+        if(!isset($_COOKIE["commande"]))
+            $_COOKIE["commande"] = "[]";
         var_dump($_COOKIE);die;
+        
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
             $page = 1;
