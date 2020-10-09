@@ -43,6 +43,15 @@ class DefaultController extends AbstractController
         //return new Paginator($query);
 
         $products = $query->getResult();
+
+        $queryCount = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->getQuery();
+
+        $countProducts = $queryCount->getResult();
+        var_dump($countProducts);die;
+
         return $this->render('boutique.html.twig', [
             'products' => $products,
         ]);
