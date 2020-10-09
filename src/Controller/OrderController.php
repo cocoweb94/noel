@@ -20,10 +20,10 @@ class OrderController extends AbstractController
 
     private $mailer;
 
-    public function __construct(MailerInterface $mailer)
+    /*public function __construct(MailerInterface $mailer)
     {
         $this->mailer = $mailer;
-    }
+    }*/
 
     /**
      * @Route("/createOrder", name="createOrder", methods={"POST"})
