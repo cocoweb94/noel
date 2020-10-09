@@ -25,14 +25,19 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
+        $page = $request->query->get('page');
+        if(is_null($page) || $page < 1) {
+            $page = 1;
+        }
+
         $repository = $this->getDoctrine()->getRepository(Product::class);
         //$products = $repository->findAll();
 
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->setFirstResult((2 - 1) * 8)
-            ->setMaxResults(8)
+            ->setFirstResult(($page - 1) * getenv('LIMIT'))
+            ->setMaxResults(getenv('LIMIT'))
             //->orderBy('p.price', 'ASC')
             ->getQuery();
         //return new Paginator($query);
