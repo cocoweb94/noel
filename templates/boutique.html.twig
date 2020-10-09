@@ -12,11 +12,11 @@
 
                     {% for product in products %}
                         <div class="col-md-3 shop_box"><a href="single.html">
-                                <img src="images/{{ product.photo|e }}" class="img-responsive" alt=""/>
+                                <img src="images/{{ product.photo|raw }}" class="img-responsive" alt=""/>
                                 <div class="shop_desc">
-                                    <h3><a href="#">{{ product.name|e }}</a></h3>
-                                    <p>{{ product.description|e }}</p>
-                                    <span class="actual">{{ product.price|e }}&euro;</span><br>
+                                    <h3><a href="#">{{ product.name|raw }}</a></h3>
+                                    <p>{{ product.description|raw }}</p>
+                                    <span class="actual">{{ product.price|raw }}&euro;</span><br>
                                     <ul class="buttons">
                                         <li class="cart"><a href="#">Ajouter au panier</a></li>
                                         <div class="clear"> </div>
@@ -28,6 +28,7 @@
                             </div>
                             <div class="row">
                         {% endif %}
+
                     {% else %}
                         <div><em>Nous n'avons plus de marchandise en stock pour le moment, désolé.</em></div>
                     {% endfor %}
