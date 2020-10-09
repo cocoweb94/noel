@@ -14,11 +14,12 @@ $(document).ready(function() {
 
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
-		var commande = Cookies.get('commande');
+		var commande = $.cookie("commande");
 		var tabCommande = jQuery.parseJSON(commande);
 		tabCommande[id] = 1;
 		Cookies.set('commande', JSON.stringify(tabCommande));
-		alert(commande);
+		$.cookie("commande", JSON.stringify(tabCommande));
+		alert($.cookie("commande"));
 	});
 
 
