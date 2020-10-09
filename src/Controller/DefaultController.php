@@ -26,7 +26,15 @@ class DefaultController extends AbstractController
     public function boutique(Request $request): Response
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
-        $products = $repository->findAll();
+        //$products = $repository->findAll();
+
+        $query = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            //->orderBy('p.price', 'ASC')
+            ->getQuery();
+
+        $products = $query->getResult();
         return $this->render('boutique.html.twig', [
             'products' => $products,
         ]);
