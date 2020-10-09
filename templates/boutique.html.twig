@@ -34,7 +34,7 @@
                     {% endfor %}
                 </div>
                 <ul class="pagination">
-                    {% for i in 1..page %}
+                    {% for i in 1..nbpage %}
                         <li><a href="{{ path('boutique', { 'page': i}) }}">{{ i }}</a></li>
                     {% endfor %}
                 </ul>
