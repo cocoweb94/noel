@@ -95,7 +95,6 @@ class DefaultController extends AbstractController
         header('Access-Control-Max-Age: 1000');
 
         $req = json_decode(urldecode($request->getContent()), true);
-        $_COOKIE["commande"] = $req;
 
         $repository = $this->getDoctrine()->getRepository(Product::class);
 

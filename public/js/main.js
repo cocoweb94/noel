@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 		$("#commande").prop('value', JSON.stringify(tabCommande));
 		setCookie(JSON.stringify(tabCommande));
-		alert(document.cookie);
+		alert(getCookie("commande"));
 		$.ajax({
 			url: "/addpanier",
 			type: "POST",
@@ -64,9 +64,8 @@ $(document).ready(function() {
 				console.log(status);
 			}
 		});
-
 		alert($("#commande").val());
-		alert(getCookie("commande"));
+
 	});
 
 	function setCookie(cvalue) {
