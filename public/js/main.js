@@ -66,6 +66,7 @@ $(document).ready(function() {
 		});
 
 		alert($("#commande").val());
+		alert(getCookie("commande"));
 	});
 
 	function setCookie(cvalue) {
@@ -79,6 +80,25 @@ $(document).ready(function() {
 		}
 
 		document.cookie = "commande=" + cvalue + "; " + expires+';path=/';
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c[0] == ' ') {
+				c = c.substring(1);
+			}
+
+			if (c.indexOf(name) != -1) {
+				if ('btoa' in window) return atob(c.substring(name.length,c.length));}
+			else return c.substring(name.length,c.length);
+		}
+	}
+
+		return false;
 	}
 
 	function getSelectedValue(id) {
