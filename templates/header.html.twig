@@ -40,9 +40,9 @@
                                         {% for product in panier %}
                                             <div class="clear"></div>
                                             <li class="list_img">
-                                                <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="60">
+                                                <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="75">
                                             </li>
-                                            <li class="list_desc"><h4>{{ product.name|raw }}</h4><span class="actual">{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</span></li>
+                                            <li class="list_desc"><p>{{ product.name|raw }}</p><p>{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</span></li>
 
                                         {% endfor %}
                                     {% endif %}

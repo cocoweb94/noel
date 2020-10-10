@@ -128,8 +128,8 @@ class DefaultController extends AbstractController
                 $htmlPanier .= '<div class="clear"></div>';
                 $htmlPanier .= '<li class="list_img"><img src="images/'.$product->getPhoto().'" alt="'.$product->getName().'" width="60"/></li>';
                 $htmlPanier .= '<li class="list_desc">';
-                $htmlPanier .= '<h4>'.$product->getName().'</h4>';
-                $htmlPanier .= '<span class="actual">'.$req[$product->getId()].' x '.$product->getPrice().' &euro;</span>';
+                $htmlPanier .= '<p>'.$product->getName().'</p>';
+                $htmlPanier .= '<p>'.$req[$product->getId()].' x '.$product->getPrice().' &euro;</p>';
                 $htmlPanier .= '</li>';
             }
 
