@@ -101,17 +101,17 @@ class DefaultController extends AbstractController
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
                 ->setParameter('stock', '0')
-                /*->andWhere('p.id IN (:ints)')
-                ->setParameter('ints', array_keys($req),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)*/
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($req),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
                 ->getQuery();
 
             $products = $query->getResult();
 
             foreach($products as $product){
-
+                $resultProducts = $product;
             }
 
-            return new JsonResponse($products, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+            return new JsonResponse($resultProducts, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
         } else {
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
