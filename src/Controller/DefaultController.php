@@ -26,7 +26,7 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
-        //if(!isset($_COOKIE["commande"]))
+        if(!isset($_COOKIE["commande"]))
             $_COOKIE["commande"] = "{}";
 
         var_dump($_COOKIE);
