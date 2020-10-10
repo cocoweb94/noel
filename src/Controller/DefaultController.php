@@ -116,7 +116,7 @@ class DefaultController extends AbstractController
                 $htmlPanier .= '</li>';
             }
 
-            return new JsonResponse($htmlPanier, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+            return new Response($htmlPanier, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
         } else {
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
