@@ -36,6 +36,7 @@ class DefaultController extends AbstractController
             $page = 1;
         }
 
+        //----------------- GET LIST PRODUCT PAGINATE  ----------------------
         $repository = $this->getDoctrine()->getRepository(Product::class);
         //$products = $repository->findAll();
 
@@ -50,6 +51,7 @@ class DefaultController extends AbstractController
 
         $products = $query->getResult();
 
+        //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
@@ -58,11 +60,23 @@ class DefaultController extends AbstractController
         $countProducts = $queryCount->getResult();
         $countPage = count($countProducts) / getenv('LIMIT');
 
+        //----------------- GET PANIER ----------------------
+        $tabCookie = json_decode($_COOKIE["commande"]);
+        $query = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->andWhere('p.id IN (:ints)')
+            ->setParameter('ints', array_keys($tabCookie),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->getQuery();
+
+        $panierProducts = $query->getResult();
+
         return $this->render('boutique.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
-            'jsonCommande' => $_COOKIE["commande"],
+            'cookiepanier' => json_decode($_COOKIE["commande"]),
+            'panier' => $panierProducts,
         ]);
     }
 

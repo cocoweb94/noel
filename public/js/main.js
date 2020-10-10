@@ -40,32 +40,28 @@ $(document).ready(function() {
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 
-		var tabCommande = $.parseJSON($("#commande").val());
+		var tabCommande = $.parseJSON(getCookie("commande"));
 		if(id in tabCommande){
 			tabCommande[id] = tabCommande[id] + 1;
 		} else{
 			tabCommande[id] = 1;
 		}
 
-		$("#commande").prop('value', JSON.stringify(tabCommande));
 		setCookie(JSON.stringify(tabCommande));
-		alert(getCookie("commande"));
+
 		$.ajax({
 			url: "/addpanier",
 			type: "POST",
 			dataType: "text",
 			contentType: "application/json",
-			data: JSON.stringify(tabCommande),
+			data: getCookie("commande"),
 			success:function(result){
-				$( "#panier").html("");
 				$("#panier").html(result);
 			},
 			error:function(xhr,status,error){
 				console.log(status);
 			}
 		});
-		alert($("#commande").val());
-
 	});
 
 	function setCookie(cvalue) {
