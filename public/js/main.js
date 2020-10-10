@@ -48,6 +48,22 @@ $(document).ready(function() {
 		}
 
 		$("#commande").prop('value', JSON.stringify(tabCommande));
+
+		$.ajax({
+			url: "/addpanier",
+			type: "POST",
+			dataType: "text",
+			contentType: "application/json",
+			data: JSON.stringify(tabCommande),
+			success:function(result){
+				$( "#commande").html("");
+				$("#commande").html(result);
+			},
+			error:function(xhr,status,error){
+				console.log(status);
+			}
+		});
+
 		alert($("#commande").val());
 	});
 

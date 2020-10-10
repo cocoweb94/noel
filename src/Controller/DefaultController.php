@@ -82,4 +82,39 @@ class DefaultController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/addpanier", name="addpanier")
+     */
+    public function addpanier(Request $request)
+    {
+        header('Access-Control-Allow-Origin: noel.diaconat-grenoble.org');
+        header('Access-Control-Allow-Methods: POST');
+        header('Access-Control-Max-Age: 1000');
+
+
+        $req = json_decode(urldecode($request->getContent()), true);
+
+        /*$repository = $this->getDoctrine()->getRepository(Product::class);
+        //$products = $repository->findAll();
+
+        $query = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->setFirstResult(($page - 1) * getenv('LIMIT'))
+            ->setMaxResults(getenv('LIMIT'))
+            //->orderBy('p.price', 'ASC')
+            ->getQuery();
+        //return new Paginator($query);
+
+        $products = $query->getResult();*/
+
+        if($request->isXmlHttpRequest()) {
+
+            return new JsonResponse($req, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+        } else {
+            return new Response("Erreur : ce n'est pas une requete Ajax", 400);
+        }
+
+    }
 }
