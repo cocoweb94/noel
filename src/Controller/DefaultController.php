@@ -109,9 +109,9 @@ class DefaultController extends AbstractController
                 ->getQuery();
 
             $products = $query->getResult();
-
+            $htmlPanier = "";
             foreach($products as $product){
-                $htmlPanier = '<div class="clear"></div>';
+                $htmlPanier .= '<div class="clear"></div>';
                 $htmlPanier .= '<li class="list_img"><img src="images/'.$product->getPhoto().'" alt="'.$product->getName().'" width="60"/></li>';
                 $htmlPanier .= '<li class="list_desc">';
                 $htmlPanier .= '<h4>'.$product->getName().'</h4>';
