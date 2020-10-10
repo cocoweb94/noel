@@ -38,7 +38,7 @@
                                 <div id="panier">
                                     {% if panier is not null %}
                                         {% for product in panier %}
-                                            <div class="clear"></div>
+                                            <div class="clear"></div><br>
                                             <li class="list_img">
                                                 <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="75">
                                             </li>
