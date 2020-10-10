@@ -96,13 +96,10 @@ class DefaultController extends AbstractController
         $req = json_decode(urldecode($request->getContent()), true);
 
         /*$repository = $this->getDoctrine()->getRepository(Product::class);
-        //$products = $repository->findAll();
 
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->setFirstResult(($page - 1) * getenv('LIMIT'))
-            ->setMaxResults(getenv('LIMIT'))
             //->orderBy('p.price', 'ASC')
             ->getQuery();
         //return new Paginator($query);
@@ -111,7 +108,7 @@ class DefaultController extends AbstractController
 
         if($request->isXmlHttpRequest()) {
 
-            return new JsonResponse($req, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+            return new JsonResponse(array_keys($req), 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
         } else {
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
