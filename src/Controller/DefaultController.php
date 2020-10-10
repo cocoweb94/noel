@@ -92,23 +92,26 @@ class DefaultController extends AbstractController
         header('Access-Control-Allow-Methods: POST');
         header('Access-Control-Max-Age: 1000');
 
-
         $req = json_decode(urldecode($request->getContent()), true);
 
-        /*$repository = $this->getDoctrine()->getRepository(Product::class);
-
-        $query = $repository->createQueryBuilder('p')
-            ->where('p.stock > :stock')
-            ->setParameter('stock', '0')
-            //->orderBy('p.price', 'ASC')
-            ->getQuery();
-        //return new Paginator($query);
-
-        $products = $query->getResult();*/
+        $repository = $this->getDoctrine()->getRepository(Product::class);
 
         if($request->isXmlHttpRequest()) {
 
-            return new JsonResponse(array_keys($req), 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($req),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $products = $query->getResult();
+
+            foreach($products as $product){
+
+            }
+
+            return new JsonResponse($products, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
         } else {
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
