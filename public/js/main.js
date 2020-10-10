@@ -87,9 +87,9 @@ $(document).ready(function() {
 				c = c.substring(1);
 			}
 
-			if (c.indexOf(name) != -1) {
-				if ('btoa' in window) return atob(c.substring(name.length,c.length));}
-			else return c.substring(name.length,c.length);
+			if (c.indexOf(name) != -1) {return c.substring(name.length,c.length);}
+				/*if ('btoa' in window) return atob(c.substring(name.length,c.length));}
+			else return c.substring(name.length,c.length);*/
 		}
 		return false;
 	}
