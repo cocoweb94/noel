@@ -48,6 +48,7 @@ $(document).ready(function() {
 		}
 
 		$("#commande").prop('value', JSON.stringify(tabCommande));
+		setCookie(JSON.stringify(tabCommande));
 
 		$.ajax({
 			url: "/addpanier",
@@ -67,6 +68,18 @@ $(document).ready(function() {
 		alert($("#commande").val());
 	});
 
+	function setCookie(cvalue) {
+		var d = new Date();
+		d.setTime(d.getTime() + (1*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+
+		// règle le pb des caractères interdits
+		if ('btoa' in window) {
+			cvalue = btoa(cvalue);
+		}
+
+		document.cookie = "commande=" + cvalue + "; " + expires+';path=/';
+	}
 
 	function getSelectedValue(id) {
 		return $("#" + id).find("dt a span.value").html();
