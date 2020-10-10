@@ -79,6 +79,9 @@ $(document).ready(function() {
 			cvalue = btoa(cvalue);
 		}
 
+		alert('toto');
+		alert(cvalue);
+
 		document.cookie = "commande=" + cvalue + "; " + expires+';path=/';
 	}
 
