@@ -96,8 +96,6 @@ $(document).ready(function() {
 				if ('btoa' in window) return atob(c.substring(name.length,c.length));}
 			else return c.substring(name.length,c.length);
 		}
-	}
-
 		return false;
 	}
 
