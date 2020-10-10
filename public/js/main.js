@@ -74,14 +74,6 @@ $(document).ready(function() {
 		d.setTime(d.getTime() + (1*24*60*60*1000));
 		var expires = "expires="+d.toUTCString();
 
-		// règle le pb des caractères interdits
-		if ('btoa' in window) {
-			cvalue = btoa(cvalue);
-		}
-
-		alert('toto');
-		alert(cvalue);
-
 		document.cookie = "commande=" + cvalue + "; " + expires+';path=/';
 	}
 
