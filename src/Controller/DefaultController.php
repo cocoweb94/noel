@@ -108,10 +108,15 @@ class DefaultController extends AbstractController
             $products = $query->getResult();
 
             foreach($products as $product){
-                $resultProducts = $product->getName();
+                $htmlPanier = '<div class="clear"></div>';
+                $htmlPanier .= '<li class="list_img"><img src="images/'.$product->getPhoto().'" alt="'.$product->getName().'"/></li>';
+                $htmlPanier .= '<li class="list_desc">';
+                $htmlPanier .= '<h4>'.$product->getName().'</h4>';
+                $htmlPanier .= '<span class="actual">'.$req[$product->getId()].' x '.$product->getPrice().' &euro;</span>';
+                $htmlPanier .= '</li>';
             }
 
-            return new JsonResponse($resultProducts, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
+            return new JsonResponse($htmlPanier, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
         } else {
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
