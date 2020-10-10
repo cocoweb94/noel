@@ -108,7 +108,7 @@ class DefaultController extends AbstractController
             $products = $query->getResult();
 
             foreach($products as $product){
-                $resultProducts = $product["name"];
+                $resultProducts = $product->getName();
             }
 
             return new JsonResponse($resultProducts, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
