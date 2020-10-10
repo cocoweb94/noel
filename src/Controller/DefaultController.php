@@ -101,8 +101,8 @@ class DefaultController extends AbstractController
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
                 ->setParameter('stock', '0')
-                ->andWhere('p.id IN (:ints)')
-                ->setParameter('ints', array_keys($req),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                /*->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($req),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)*/
                 ->getQuery();
 
             $products = $query->getResult();
