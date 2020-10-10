@@ -56,8 +56,8 @@ $(document).ready(function() {
 			contentType: "application/json",
 			data: JSON.stringify(tabCommande),
 			success:function(result){
-				$( "#commande").html("");
-				$("#commande").html(result);
+				$( "#panier").html("");
+				$("#panier").html(result);
 			},
 			error:function(xhr,status,error){
 				console.log(status);
