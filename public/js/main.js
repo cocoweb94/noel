@@ -48,9 +48,8 @@ $(document).ready(function() {
 		}
 
 		$("#commande").prop('value', JSON.stringify(tabCommande));
-		alert(JSON.stringify(tabCommande));
 		setCookie(JSON.stringify(tabCommande));
-
+		alert(document.cookie);
 		$.ajax({
 			url: "/addpanier",
 			type: "POST",
