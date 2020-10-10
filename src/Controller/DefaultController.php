@@ -29,7 +29,8 @@ class DefaultController extends AbstractController
         if(!isset($_COOKIE["commande"]))
             $_COOKIE["commande"] = "{}";
 
-        var_dump($_COOKIE);
+        //var_dump($_COOKIE);
+        var_dump(json_decode($_COOKIE["commande"]));
 
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
@@ -61,7 +62,7 @@ class DefaultController extends AbstractController
         $countPage = count($countProducts) / getenv('LIMIT');
 
         //----------------- GET PANIER ----------------------
-        $tabCookie = json_decode($_COOKIE["commande"]);
+        /*$tabCookie = json_decode($_COOKIE["commande"]);
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
@@ -69,14 +70,14 @@ class DefaultController extends AbstractController
             ->setParameter('ints', array_keys($tabCookie),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
-        $panierProducts = $query->getResult();
+        $panierProducts = $query->getResult();*/
 
         return $this->render('boutique.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
-            'cookiepanier' => json_decode($_COOKIE["commande"]),
-            'panier' => $panierProducts,
+            'cookiepanier' => null,
+            'panier' => null,
         ]);
     }
 
