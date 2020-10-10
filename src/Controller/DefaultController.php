@@ -56,6 +56,8 @@ class DefaultController extends AbstractController
         $countProducts = $queryCount->getResult();
         $countPage = count($countProducts) / getenv('LIMIT');
 
+        var_dump($_COOKIE["commande"]);
+
         return $this->render('boutique.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
