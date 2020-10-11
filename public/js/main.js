@@ -39,6 +39,7 @@ $(document).ready(function() {
 
 	$(".product_control_buttons .closepanier").click(function() {
 		setCookie("{}");
+		$("#panier").html("");
 	});
 
 	$(".buttons .cart").click(function() {
