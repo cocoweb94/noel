@@ -18,7 +18,27 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        return $this->render('index.html.twig', []);
+        //----------------- GET PANIER ----------------------
+        $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
+        if(isset($tabCookie)){
+            $repository = $this->getDoctrine()->getRepository(Product::class);
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($tabCookie),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $panierProducts = $query->getResult();
+        }else{
+            $panierProducts = null;
+            $tabCookie = null;
+        }
+
+        return $this->render('index.html.twig', [
+            'cookiepanier' => $tabCookie,
+            'panier' => $panierProducts,
+        ]);
     }
 
     /**
@@ -34,9 +54,9 @@ class DefaultController extends AbstractController
             $page = 1;
         }
 
-        //----------------- GET LIST PRODUCT PAGINATE  ----------------------
         $repository = $this->getDoctrine()->getRepository(Product::class);
-        //$products = $repository->findAll();
+
+        //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
@@ -83,6 +103,23 @@ class DefaultController extends AbstractController
      */
     public function contact(Request $request): Response
     {
+        //----------------- GET PANIER ----------------------
+        $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
+        if(isset($tabCookie)){
+            $repository = $this->getDoctrine()->getRepository(Product::class);
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($tabCookie),\Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $panierProducts = $query->getResult();
+        }else{
+            $panierProducts = null;
+            $tabCookie = null;
+        }
+
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -94,6 +131,8 @@ class DefaultController extends AbstractController
         }
         return $this->render('contact.html.twig', [
             'form' => $form->createView(),
+            'cookiepanier' => $tabCookie,
+            'panier' => $panierProducts,
         ]);
     }
 
