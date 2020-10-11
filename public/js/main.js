@@ -37,9 +37,28 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	$(".product_control_buttons .closepanier").click(function() {
-		setCookie("{}");
-		$("#panier").html("");
+	$(".deletepanier .closepanier").click(function() {
+		var id = $(this).data("id");
+
+		var tabCommande = $.parseJSON(getCookie("commande"));
+		if(id in tabCommande){
+			tabCommande.remove(id);
+			setCookie(JSON.stringify(tabCommande));
+
+			$.ajax({
+				url: "/addpanier",
+				type: "POST",
+				dataType: "text",
+				contentType: "application/json",
+				data: getCookie("commande"),
+				success:function(result){
+					$("#panier").html(result);
+				},
+				error:function(xhr,status,error){
+					console.log(status);
+				}
+			});
+		}
 	});
 
 	$(".buttons .cart").click(function() {

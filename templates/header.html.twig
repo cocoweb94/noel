@@ -43,7 +43,7 @@
                                                 <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="75">
                                             </li>
                                             <li class="list_desc"><p>{{ product.name|raw }}</p><p>{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</span></li>
-
+                                            <li class="deletepanier"><a href="#" class="closepanier" data-id="{{ product.id }}"><img src="images/close_edit.png" alt=""/></a></li>
                                         {% endfor %}
                                     {% endif %}
 

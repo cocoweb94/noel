@@ -167,6 +167,7 @@ class DefaultController extends AbstractController
                 $htmlPanier .= '<p>'.$product->getName().'</p>';
                 $htmlPanier .= '<p>'.$req[$product->getId()].' x '.$product->getPrice().' &euro;</p>';
                 $htmlPanier .= '</li>';
+                $htmlPanier .= '<li class="deletepanier"><a href="#" class="closepanier" data-id="'.$product->getId().'"><img src="images/close_edit.png" alt=""/></a></li>';
             }
 
             return new Response($htmlPanier, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
