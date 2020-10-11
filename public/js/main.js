@@ -37,7 +37,7 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	$(".deletepanier .closepanier").click(function() {
+	$(".deletepanier a").click(function() {
 		var id = $(this).data("id");
 		alert(id);
 		var tabCommande = $.parseJSON(getCookie("commande"));
