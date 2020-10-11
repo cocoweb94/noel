@@ -36,7 +36,6 @@ $(document).ready(function() {
 		$(".dropdown dd ul").hide();
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
-	console.log($(".deletepanier .closepanier"));
 
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
@@ -83,6 +82,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
+				console.log($(".deletepanier .closepanier"));
 			},
 			error:function(xhr,status,error){
 				console.log(status);
