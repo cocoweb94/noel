@@ -137,9 +137,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/addpanier", name="addpanier")
+     * @Route("/getpanier", name="getpanier")
      */
-    public function addpanier(Request $request)
+    public function getpanier(Request $request)
     {
         header('Access-Control-Allow-Origin: noel.diaconat-grenoble.org');
         header('Access-Control-Allow-Methods: POST');

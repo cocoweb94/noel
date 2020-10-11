@@ -36,6 +36,7 @@ $(document).ready(function() {
 		$(".dropdown dd ul").hide();
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
+	console.log($(".deletepanier .closepanier"));
 
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
@@ -47,7 +48,7 @@ $(document).ready(function() {
 			setCookie(JSON.stringify(tabCommande));
 
 			$.ajax({
-				url: "/addpanier",
+				url: "/getpanier",
 				type: "POST",
 				dataType: "text",
 				contentType: "application/json",
@@ -75,7 +76,7 @@ $(document).ready(function() {
 		setCookie(JSON.stringify(tabCommande));
 
 		$.ajax({
-			url: "/addpanier",
+			url: "/getpanier",
 			type: "POST",
 			dataType: "text",
 			contentType: "application/json",
