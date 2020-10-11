@@ -20,6 +20,7 @@ class DefaultController extends AbstractController
     {
         //----------------- GET PANIER ----------------------
         if(isset($_COOKIE["commande"]) && $_COOKIE["commande"] != "{}"){
+            $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
