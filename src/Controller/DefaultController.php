@@ -19,8 +19,7 @@ class DefaultController extends AbstractController
     public function index(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
-        if(isset($tabCookie)){
+        if(isset($_COOKIE["commande"] && $_COOKIE["commande"] != "{}")){
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
@@ -104,8 +103,8 @@ class DefaultController extends AbstractController
     public function contact(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
-        if(isset($tabCookie)){
+        if(isset($_COOKIE["commande"] && $_COOKIE["commande"] != "{}")){
+            $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
