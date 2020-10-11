@@ -39,6 +39,8 @@ $(document).ready(function() {
 
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
+		alert(id);
+		alert(tabCommande[id]);
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		if(id in tabCommande){
 			delete tabCommande[id];
