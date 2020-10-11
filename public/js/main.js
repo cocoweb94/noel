@@ -37,6 +37,10 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
+	$(".product_control_buttons .closepanier").click(function() {
+		setCookie("{}");
+	});
+
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 
