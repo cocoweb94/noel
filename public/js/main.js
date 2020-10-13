@@ -24,6 +24,9 @@ jQuery.parseJSON = function( data ) {
 }
 
 $(document).ready(function() {
+	if(getCookie("commande") == ""){
+		setCookie("{}");
+	}
 	$(".dropdown img.flag").addClass("flagvisibility");
 
 	$(".dropdown dt a").click(function() {
@@ -64,7 +67,6 @@ $(document).ready(function() {
 
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
-		setCookie("{1:1}");
 		console.log(getCookie("commande"));
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		console.log(tabCommande);
