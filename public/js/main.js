@@ -40,6 +40,8 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
+	console.log($(".deletepanier .closepanier"));
+
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
 		alert(id);
