@@ -42,10 +42,8 @@ $(document).ready(function() {
 
 	$('body').on('click', 'li.closepanier', function(e){
 		var id = $(this).data("id");
-		alert(id);
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		if(id in tabCommande){
-			alert(tabCommande[id]);
 			delete tabCommande[id];
 			setCookie(JSON.stringify(tabCommande));
 
@@ -57,7 +55,6 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
-					console.log($("#panier .closepanier"));
 				},
 				error:function(xhr,status,error){
 					console.log(status);
@@ -85,7 +82,6 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				console.log($("#panier .closepanier"));
 			},
 			error:function(xhr,status,error){
 				console.log(status);
