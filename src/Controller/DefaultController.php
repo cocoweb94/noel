@@ -50,6 +50,7 @@ class DefaultController extends AbstractController
         if(!isset($_COOKIE["commande"])){
             $response = new Response();
             $response->headers->setCookie(new Cookie('commande', '{}'));
+            $response->send();
         }
 
         var_dump($_COOKIE);
