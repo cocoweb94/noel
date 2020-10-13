@@ -84,7 +84,7 @@ class DefaultController extends AbstractController
         $countPage = count($countProducts) / getenv('LIMIT');
 
         //----------------- GET PANIER ----------------------
-        if(!isset($_COOKIE["commande"])) {
+        if(isset($_COOKIE["commande"])) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
