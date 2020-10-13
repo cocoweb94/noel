@@ -40,6 +40,11 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
+	$('#panier').append("<h1>Hello</h1><input id=\"but\" type=\"button\">Click");
+	$("#but").on("click", function() {
+		alert("bla bla");
+	});
+
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
 		alert(id);
