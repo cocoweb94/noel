@@ -51,7 +51,7 @@ class DefaultController extends AbstractController
             setcookie("commande", "{}", time()+3600, "/~noel/", "noel.diaconat-grenoble.org", false, false);
         }
 
-        var_dump($_COOKIE["commande"]);
+        var_dump($_COOKIE);
 
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
