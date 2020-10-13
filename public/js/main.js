@@ -41,6 +41,7 @@ $(document).ready(function() {
 	});
 
 	console.log($(".deletepanier .closepanier"));
+	console.log($(".buttons .cart"));
 
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
