@@ -41,7 +41,6 @@ $(document).ready(function() {
 	});
 
 	console.log($(".deletepanier .closepanier"));
-	console.log($(".buttons .cart"));
 
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
@@ -72,8 +71,6 @@ $(document).ready(function() {
 		var id = $(this).data("id");
 		console.log(getCookie("commande"));
 		var tabCommande = $.parseJSON(getCookie("commande"));
-		console.log(tabCommande);
-		console.log(document.cookie);
 		if(id in tabCommande){
 			tabCommande[id] = tabCommande[id] + 1;
 		} else{
@@ -81,7 +78,7 @@ $(document).ready(function() {
 		}
 
 		setCookie(JSON.stringify(tabCommande));
-
+		console.log($(".deletepanier .closepanier"));
 		$.ajax({
 			url: "/getpanier",
 			type: "POST",
