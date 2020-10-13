@@ -40,8 +40,6 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	console.log($(".deletepanier .closepanier"));
-
 	$(".deletepanier .closepanier").click(function() {
 		var id = $(this).data("id");
 		alert(id);
@@ -69,7 +67,6 @@ $(document).ready(function() {
 
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
-		console.log(getCookie("commande"));
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		if(id in tabCommande){
 			tabCommande[id] = tabCommande[id] + 1;
@@ -78,7 +75,7 @@ $(document).ready(function() {
 		}
 
 		setCookie(JSON.stringify(tabCommande));
-		console.log($(".deletepanier .closepanier"));
+
 		$.ajax({
 			url: "/getpanier",
 			type: "POST",
@@ -87,12 +84,12 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				console.log($(".deletepanier .closepanier"));
 			},
 			error:function(xhr,status,error){
 				console.log(status);
 			}
 		});
+		console.log($(".deletepanier .closepanier"));
 	});
 
 	function setCookie(cvalue) {
