@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
     public function index(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        if(isset($_COOKIE["commande"]) && $_COOKIE["commande"] != "{}"){
+        if(in_array("commande", $_COOKIE)){
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
@@ -109,7 +109,7 @@ class DefaultController extends AbstractController
     public function contact(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        if(isset($_COOKIE["commande"]) && $_COOKIE["commande"] != "{}"){
+        if(in_array("commande", $_COOKIE)){
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
