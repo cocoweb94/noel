@@ -65,6 +65,7 @@ $(document).ready(function() {
 	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 		setCookie("{1:1}");
+		console.log(getCookie("commande"));
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		console.log(tabCommande);
 		console.log(document.cookie);
