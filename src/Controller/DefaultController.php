@@ -19,8 +19,10 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request): Response
     {
+        var_dump($_COOKIE);
         //----------------- GET PANIER ----------------------
         if(in_array("commande", $_COOKIE)){
+            var_dump($_COOKIE["commande"]);
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
