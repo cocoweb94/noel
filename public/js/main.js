@@ -24,7 +24,7 @@ jQuery.parseJSON = function( data ) {
 }
 
 $(document).ready(function() {
-	setCookie("{}");
+	setCookie("{1:1}");
 	$(".dropdown img.flag").addClass("flagvisibility");
 
 	$(".dropdown dt a").click(function() {
