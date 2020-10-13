@@ -47,7 +47,6 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
-        var_dump($_COOKIE);
 
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
