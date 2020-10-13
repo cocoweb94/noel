@@ -67,6 +67,7 @@ $(document).ready(function() {
 
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		console.log(tabCommande);
+		console.log(document.cookie);
 		if(id in tabCommande){
 			tabCommande[id] = tabCommande[id] + 1;
 		} else{
