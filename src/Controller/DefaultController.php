@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\Type\ContactType;
@@ -47,7 +48,7 @@ class DefaultController extends AbstractController
     public function boutique(Request $request): Response
     {
         if(!isset($_COOKIE["commande"]))
-            $_COOKIE["commande"] = "{}";
+            $cookie = new Cookie('commande', '{}', strtotime('now + 10 minutes'));
 
         var_dump($_COOKIE["commande"]);
 
