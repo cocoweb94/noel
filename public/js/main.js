@@ -40,7 +40,7 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	$("#panier .closepanier").live('click',function() {
+	$('body').on('click', 'li.closepanier', function(e){
 		var id = $(this).data("id");
 		alert(id);
 		var tabCommande = $.parseJSON(getCookie("commande"));
@@ -66,7 +66,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".buttons .cart").live('click',function() {
+	$(".buttons .cart").click(function() {
 		var id = $(this).data("id");
 		var tabCommande = $.parseJSON(getCookie("commande"));
 		if(id in tabCommande){
