@@ -40,12 +40,7 @@ $(document).ready(function() {
 		$("#result").html("Selected value is: " + getSelectedValue("sample"));
 	});
 
-	$('#panier').append("<h1>Hello</h1><input id=\"but\" type=\"button\">Click");
-	$("#but").on("click", function() {
-		alert("bla bla");
-	});
-
-	$(".deletepanier .closepanier").click(function() {
+	$("#panier .closepanier").click(function() {
 		var id = $(this).data("id");
 		alert(id);
 		var tabCommande = $.parseJSON(getCookie("commande"));
@@ -62,7 +57,7 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
-					console.log($(".deletepanier .closepanier"));
+					console.log($("#panier .closepanier"));
 				},
 				error:function(xhr,status,error){
 					console.log(status);
@@ -90,7 +85,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				console.log($(".deletepanier .closepanier"));
+				console.log($("#panier .closepanier"));
 			},
 			error:function(xhr,status,error){
 				console.log(status);
