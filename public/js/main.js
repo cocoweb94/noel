@@ -57,13 +57,12 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
+					console.log($(".deletepanier .closepanier"));
 				},
 				error:function(xhr,status,error){
 					console.log(status);
 				}
 			});
-
-			console.log($(".deletepanier .closepanier"));
 		}
 	});
 
@@ -86,12 +85,13 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
+				console.log($(".deletepanier .closepanier"));
 			},
 			error:function(xhr,status,error){
 				console.log(status);
 			}
 		});
-		console.log($(".deletepanier .closepanier"));
+
 	});
 
 	function setCookie(cvalue) {
