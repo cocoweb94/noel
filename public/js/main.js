@@ -91,6 +91,7 @@ $(document).ready(function() {
 				console.log(status);
 			}
 		});
+		console.log($(".deletepanier .closepanier"));
 	});
 
 	function setCookie(cvalue) {
