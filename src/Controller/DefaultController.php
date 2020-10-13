@@ -21,7 +21,6 @@ class DefaultController extends AbstractController
     {
         //----------------- GET PANIER ----------------------
         if(array_key_exists("commande", $_COOKIE)){
-            var_dump($_COOKIE["commande"]);
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
@@ -173,7 +172,7 @@ class DefaultController extends AbstractController
                 $htmlPanier .= '<p>'.$product->getName().'</p>';
                 $htmlPanier .= '<p>'.$req[$product->getId()].' x '.$product->getPrice().' &euro;</p>';
                 $htmlPanier .= '</li>';
-                $htmlPanier .= '<li class="deletepanier"><a href="#" class="closepanier" data-id="'.$product->getId().'"><img src="images/close_edit.png" alt=""/></a></li>';
+                $htmlPanier .= '<li class="closepanier" data-id="'.$product->getId().'"><a href="#" title="Supprimer"><img src="images/close_edit.png" alt="Supprimer"/></a></li>';
             }
 
             return new Response($htmlPanier, 200, array('Access-Control-Allow-Origin'=> 'noel.diaconat-grenoble.org'));
