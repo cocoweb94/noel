@@ -47,10 +47,6 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
-        if(!in_array("commande", $_COOKIE)){
-            setcookie("commande", "{}", time()+3600, "/~noel/", "noel.diaconat-grenoble.org", false, false);
-        }
-
         var_dump($_COOKIE);
 
         $page = $request->query->get('page');
