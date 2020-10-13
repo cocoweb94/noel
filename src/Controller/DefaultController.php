@@ -19,10 +19,8 @@ class DefaultController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        var_dump($_COOKIE);
-        var_dump(in_array("commande", $_COOKIE));
         //----------------- GET PANIER ----------------------
-        if(in_array("commande", $_COOKIE)){
+        if(array_key_exists("commande", $_COOKIE)){
             var_dump($_COOKIE["commande"]);
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
@@ -82,7 +80,7 @@ class DefaultController extends AbstractController
         $countPage = count($countProducts) / getenv('LIMIT');
 
         //----------------- GET PANIER ----------------------
-        if(in_array("commande", $_COOKIE)) {
+        if(array_key_exists("commande", $_COOKIE)) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
@@ -112,7 +110,7 @@ class DefaultController extends AbstractController
     public function contact(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        if(in_array("commande", $_COOKIE)){
+        if(array_key_exists("commande", $_COOKIE)){
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
