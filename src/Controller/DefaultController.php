@@ -20,6 +20,7 @@ class DefaultController extends AbstractController
     public function index(Request $request): Response
     {
         var_dump($_COOKIE);
+        var_dump(in_array("commande", $_COOKIE));
         //----------------- GET PANIER ----------------------
         if(in_array("commande", $_COOKIE)){
             var_dump($_COOKIE["commande"]);
