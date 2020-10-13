@@ -102,19 +102,18 @@ $(document).ready(function() {
 
 	function getCookie(cname) {
 		var name = cname + "=";
-		var ca = document.cookie.split(';');
-
-		for(var i = 0; i < ca.length; i++) {
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
 			var c = ca[i];
-			while (c[0] == ' ') {
+			while (c.charAt(0) == ' ') {
 				c = c.substring(1);
 			}
-
-			if (c.indexOf(name) != -1) {return c.substring(name.length,c.length);}
-				/*if ('btoa' in window) return atob(c.substring(name.length,c.length));}
-			else return c.substring(name.length,c.length);*/
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
 		}
-		return false;
+		return "";
 	}
 
 	function getSelectedValue(id) {
