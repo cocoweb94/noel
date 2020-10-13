@@ -47,7 +47,7 @@ class DefaultController extends AbstractController
      */
     public function boutique(Request $request): Response
     {
-        if(!isset($_COOKIE["commande"])){
+        if(!in_array("commande", $_COOKIE)){
             setcookie("commande", "{}", time()+3600, "/~noel/", "noel.diaconat-grenoble.org", false, false);
         }
 
@@ -83,7 +83,7 @@ class DefaultController extends AbstractController
         $countPage = count($countProducts) / getenv('LIMIT');
 
         //----------------- GET PANIER ----------------------
-        if(isset($_COOKIE["commande"])) {
+        if(in_array("commande", $_COOKIE) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
