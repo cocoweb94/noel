@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
     public function index(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        if(array_key_exists("commande", $_COOKIE)){
+        if(array_key_exists("commande", $_COOKIE) && count(json_decode($_COOKIE["commande"])) > 0) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
@@ -79,7 +79,7 @@ class DefaultController extends AbstractController
         $countPage = count($countProducts) / getenv('LIMIT');
 
         //----------------- GET PANIER ----------------------
-        if(array_key_exists("commande", $_COOKIE)) {
+        if(array_key_exists("commande", $_COOKIE) && count(json_decode($_COOKIE["commande"])) > 0) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
@@ -99,7 +99,7 @@ class DefaultController extends AbstractController
             'nbpage' => ceil($countPage),
             'page' => $page,
             'cookiepanier' => $tabCookie,
-            'panier' => $panierProducts,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
 
@@ -109,7 +109,7 @@ class DefaultController extends AbstractController
     public function contact(Request $request): Response
     {
         //----------------- GET PANIER ----------------------
-        if(array_key_exists("commande", $_COOKIE)){
+        if(array_key_exists("commande", $_COOKIE) && count(json_decode($_COOKIE["commande"])) > 0) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $repository = $this->getDoctrine()->getRepository(Product::class);
             $query = $repository->createQueryBuilder('p')
@@ -189,7 +189,7 @@ class DefaultController extends AbstractController
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
         //----------------- GET PANIER ----------------------
-        if(array_key_exists("commande", $_COOKIE)) {
+        if(array_key_exists("commande", $_COOKIE) && count(json_decode($_COOKIE["commande"])) > 0) {
             $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
             $query = $repository->createQueryBuilder('p')
                 ->where('p.stock > :stock')
