@@ -200,7 +200,6 @@ class DefaultController extends AbstractController
 
             $panierProducts = $query->getResult();
         }else{
-            var_dump("toto");die;
             $this->redirectToRoute("boutique",array("panier" => "vide"),302);
         }
 
