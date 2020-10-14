@@ -8,6 +8,14 @@
     <div class="main">
         <div class="shop_top">
             <div class="container">
+                {% if paniervide %}
+                    <div class="row team_box">
+                        <h3 class="m_2" style="color:red;">M&eacute;ssage :</h3>
+                        <div class="col-md-3 team1">
+                            <p style="color:red;">Nous sommes désolé mais votre panier est vide ou les articles ne sont plus disponible</p>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="row" style="margin-bottom: 5%;">
 
                     {% for product in products %}

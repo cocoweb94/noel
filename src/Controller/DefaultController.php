@@ -100,6 +100,7 @@ class DefaultController extends AbstractController
             'page' => $page,
             'cookiepanier' => $tabCookie,
             'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
+            'paniervide' => ($request->query->get('panier') == "vide" ? true : false),
         ]);
     }
 
