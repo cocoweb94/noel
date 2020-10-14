@@ -200,7 +200,7 @@ class DefaultController extends AbstractController
 
             $panierProducts = $query->getResult();
         }else{
-            $this->redirectToRoute("boutique",array("panier" => "vide"),302);
+            return $this->redirectToRoute("boutique",array("panier" => "vide"),302);
         }
 
         $form = $this->createForm(CommandeType::class);
