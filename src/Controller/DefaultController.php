@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
 
         return $this->render('index.html.twig', [
             'cookiepanier' => $tabCookie,
-            'panier' => $panierProducts,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
 
@@ -137,7 +137,7 @@ class DefaultController extends AbstractController
         return $this->render('contact.html.twig', [
             'form' => $form->createView(),
             'cookiepanier' => $tabCookie,
-            'panier' => $panierProducts,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
 
@@ -216,7 +216,7 @@ class DefaultController extends AbstractController
         return $this->render('commande.html.twig', [
             'form' => $form->createView(),
             'cookiepanier' => $tabCookie,
-            'panier' => $panierProducts,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
 }
