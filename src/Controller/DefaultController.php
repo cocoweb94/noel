@@ -215,7 +215,7 @@ class DefaultController extends AbstractController
 
         return $this->render('commande.html.twig', [
             'form' => $form->createView(),
-            'cookiepanier' => $tabCookie,
+            'cookiepanier' => (isset($tabCookie) ? $tabCookie : null),
             'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
