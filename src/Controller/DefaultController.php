@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\Type\ContactType;
+use App\Form\Type\CommandeType;
 use App\Entity\Product;
 
 
@@ -179,5 +180,43 @@ class DefaultController extends AbstractController
             return new Response("Erreur : ce n'est pas une requete Ajax", 400);
         }
 
+    }
+
+    /**
+     * @Route("/commande", name="commande")
+     */
+    public function commande(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+        //----------------- GET PANIER ----------------------
+        if(array_key_exists("commande", $_COOKIE)) {
+            $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($tabCookie), \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $panierProducts = $query->getResult();
+        }else{
+            $this->redirectToRoute("boutique",array("panier" => "vide"),302);
+        }
+
+        $form = $this->createForm(CommandeType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $reqPost = $form->getData();
+            var_dump($reqPost);die;
+            /*$mail = new Mail($reqPost["email"], $reqPost);
+            $sendMail = $mail->sendContactMail();
+            $mailer->send($sendMail);*/
+        }
+
+        return $this->render('commande.html.twig', [
+            'form' => $form->createView(),
+            'cookiepanier' => $tabCookie,
+            'panier' => $panierProducts,
+        ]);
     }
 }

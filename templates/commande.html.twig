@@ -1,0 +1,51 @@
+{# templates/default/contact.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <div class="main">
+        <div class="shop_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 contact">
+
+                        {{ form_start(form, {'action': path('commande'), 'method': 'POST', 'name': 'form'}) }}
+                            <div class="my-custom-class-for-errors">
+                                {{ form_errors(form) }}
+                            </div>
+
+                            <div class="to">
+                                    {{ form_row(form.nom) }}
+
+                                    {{ form_row(form.prenom) }}
+
+                                    {{ form_row(form.email) }}
+
+                            </div>
+                            <div class="text">
+                                <div id="panier">
+                                {% if panier is not null %}
+                                    {% for product in panier %}
+
+                                        <div id="product-{{ product.id }}">
+                                            <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="150">
+                                            <p>{{ product.name|raw }}</p><p>{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    {% endfor %}
+                                {% endif %}
+                                    </div>
+                                <div class="form-submit">
+                                    <input name="submit" type="submit" id="submit" value="Commander"><br>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html.twig' %}
+{% endblock %}
