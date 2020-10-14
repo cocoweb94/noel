@@ -101,6 +101,7 @@ class DefaultController extends AbstractController
             'cookiepanier' => $tabCookie,
             'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
             'paniervide' => ($request->query->get('panier') == "vide" ? true : false),
+            'confcommande' => true,
         ]);
     }
 
