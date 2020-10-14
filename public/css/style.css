@@ -463,6 +463,14 @@ li.list_desc h4 a:hover{
 	background:#555;
 }
 /*--main--*/
+.content-title h2{
+	color: #000;
+	font-size:3em;
+	font-weight: 800;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 1.5%;
+}
 .content-top{
 	padding:10% 0;
 }
