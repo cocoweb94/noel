@@ -55,7 +55,7 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
-					if(count($.parseJSON(getCookie("commande"))) == 0)
+					if(tabCommande.length == 0)
 						$(".login_buttons").remove();
 				},
 				error:function(xhr,status,error){
@@ -84,7 +84,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				if(count($.parseJSON(getCookie("commande"))) == 1)
+				if(tabCommande.length == 1)
 					$("#panier").after( '<div class="login_buttons"><div class="check_button"><a href="/commande">Commander</a></div><div class="clear"></div></div>' );
 			},
 			error:function(xhr,status,error){
