@@ -56,6 +56,7 @@ $(document).ready(function() {
 				success:function(result){
 					$("#panier").html(result);
 					var tabCommande = $.parseJSON(getCookie("commande"));
+					alert(tabCommande.length);
 					if(tabCommande.length == 0)
 						$(".login_buttons").remove();
 				},
@@ -86,6 +87,7 @@ $(document).ready(function() {
 			success:function(result){
 				$("#panier").html(result);
 				var tabCommande = $.parseJSON(getCookie("commande"));
+				alert(tabCommande.length);
 				if(tabCommande.length == 1)
 					$("#panier").after( '<div class="login_buttons"><div class="check_button"><a href="/commande">Commander</a></div><div class="clear"></div></div>' );
 			},
