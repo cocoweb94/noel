@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection as Collection;
 /**
  * @ORM\Table(name="`order`")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Order
 {
@@ -48,6 +49,13 @@ class Order
      * @ORM\OneToMany(targetEntity="OrderProduct", mappedBy="order", fetch="EXTRA_LAZY")
      */
     private $productsOrder;
+
+    /**
+     * @var datetime $created
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
 
     public function getId()
     {
@@ -112,5 +120,20 @@ class Order
         $this->payment = $payment;
 
         return $this;
+    }
+
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Gets triggered only on insert
+
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->created = new \DateTime("now");
     }
 }
