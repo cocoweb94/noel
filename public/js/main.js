@@ -55,9 +55,7 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
-					var tabCommande = $.parseJSON(getCookie("commande"));
-					alert(getCookie("commande"));
-					if(tabCommande.length == 0)
+					if($(".closepanier").length == 0)
 						$(".login_buttons").remove();
 				},
 				error:function(xhr,status,error){
@@ -86,9 +84,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				var tabCommande = $.parseJSON(getCookie("commande"));
-				alert(tabCommande.length);
-				if(tabCommande.length == 1)
+				if($(".closepanier").length == 1)
 					$("#panier").after( '<div class="login_buttons"><div class="check_button"><a href="/commande">Commander</a></div><div class="clear"></div></div>' );
 			},
 			error:function(xhr,status,error){
