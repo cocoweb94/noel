@@ -26,11 +26,13 @@
                                     {% if panier is not null %}
                                         {% for product in panier %}
 
-                                            <div id="product-{{ product.id }}">
+                                            <div id="product-{{ product.id }}" style="float:left; margin:5px;">
                                                 <img src="images/{{ product.photo|raw }}" alt="{{ product.name|raw }}" width="150">
-                                                <p>{{ product.name|raw }}</p><p>{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</span>
+                                                <h4>{{ product.name|raw }}</h4><p><b>{{ cookiepanier[product.id]|raw }} x {{ product.price|raw }} &euro;</b></p>
                                             </div>
-                                            <div class="clear"></div>
+                                            {% if loop.index is divisible by(3) %}
+                                                <div class="clear"></div>
+                                            {% endif %}
                                         {% endfor %}
                                     {% endif %}
                                 </div>
