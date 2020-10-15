@@ -56,7 +56,7 @@ $(document).ready(function() {
 				success:function(result){
 					$("#panier").html(result);
 					var tabCommande = $.parseJSON(getCookie("commande"));
-					alert(tabCommande.length);
+					alert(getCookie("commande"));
 					if(tabCommande.length == 0)
 						$(".login_buttons").remove();
 				},
