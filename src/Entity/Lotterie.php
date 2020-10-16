@@ -36,7 +36,7 @@ class Lotterie
     private $email;
 
     /**
-     * @ORM\Column(type="ticket", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $ticket;
 
