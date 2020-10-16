@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 
 /**
  * @ORM\Table(name="`categorie`")
@@ -27,6 +28,11 @@ class Categorie
      */
     private $products;
 
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -42,5 +48,13 @@ class Categorie
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
 }
