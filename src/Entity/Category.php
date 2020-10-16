@@ -24,6 +24,11 @@ class Category
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $photo;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
      */
     private $products;
@@ -46,6 +51,18 @@ class Category
     public function setName(string $name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo)
+    {
+        $this->photo = $photo;
 
         return $this;
     }
