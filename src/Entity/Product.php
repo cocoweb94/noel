@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 
 /**
- * @ORM\Table(name="`product`")
+ * @ORM\Table(name="`product`", options={"collate"="utf8_unicode_ci"})
  * @ORM\Entity
  */
 class Product

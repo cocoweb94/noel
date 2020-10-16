@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Doctrine\Common\Collections\Collection as Collection;
 
 /**
- * @ORM\Table(name="`order`")
+ * @ORM\Table(name="`order`", options={"collate"="utf8_unicode_ci"})
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */

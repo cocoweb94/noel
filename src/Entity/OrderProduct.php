@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 /**
  * Product Relation order
  *
- * @ORM\Table(name="order_product")
+ * @ORM\Table(name="order_product", options={"collate"="utf8_unicode_ci"})
  * @ORM\Entity
  */
 class OrderProduct
