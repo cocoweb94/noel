@@ -44,11 +44,10 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/boutique", name="boutique")
+     * @Route("/brocante", name="brocante")
      */
-    public function boutique(Request $request): Response
+    public function brocante(Request $request): Response
     {
-
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
             $page = 1;
@@ -61,6 +60,8 @@ class DefaultController extends AbstractController
         $query = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 1], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->setFirstResult(($page - 1) * getenv('LIMIT'))
             ->setMaxResults(getenv('LIMIT'))
             //->orderBy('p.price', 'ASC')
@@ -73,6 +74,8 @@ class DefaultController extends AbstractController
         $queryCount = $repository->createQueryBuilder('p')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 1], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
         $countProducts = $queryCount->getResult();
@@ -94,14 +97,143 @@ class DefaultController extends AbstractController
             $panierProducts = null;
         }
 
-        return $this->render('boutique.html.twig', [
+        return $this->render('brocante.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
             'cookiepanier' => $tabCookie,
             'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
             'paniervide' => ($request->query->get('panier') == "vide" ? true : false),
-            'confcommande' => true,
+            'confcommande' => ($request->query->get('commande') == "valide" ? true : false),
+        ]);
+    }
+
+    /**
+     * @Route("/paniers", name="paniers")
+     */
+    public function paniers(Request $request): Response
+    {
+        $page = $request->query->get('page');
+        if(is_null($page) || $page < 1) {
+            $page = 1;
+        }
+
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+
+        //----------------- GET LIST PRODUCT PAGINATE  ----------------------
+
+        $query = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 2], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->setFirstResult(($page - 1) * getenv('LIMIT'))
+            ->setMaxResults(getenv('LIMIT'))
+            //->orderBy('p.price', 'ASC')
+            ->getQuery();
+        //return new Paginator($query);
+
+        $products = $query->getResult();
+
+        //----------------- GET NB PAGE ----------------------
+        $queryCount = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 2], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->getQuery();
+
+        $countProducts = $queryCount->getResult();
+        $countPage = count($countProducts) / getenv('LIMIT');
+
+        //----------------- GET PANIER ----------------------
+        if(array_key_exists("commande", $_COOKIE) && count(get_object_vars(json_decode($_COOKIE["commande"]))) > 0) {
+            $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($tabCookie), \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $panierProducts = $query->getResult();
+        }else{
+            $tabCookie = null;
+            $panierProducts = null;
+        }
+
+        return $this->render('paniers.html.twig', [
+            'products' => $products,
+            'nbpage' => ceil($countPage),
+            'page' => $page,
+            'cookiepanier' => $tabCookie,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
+        ]);
+    }
+
+    /**
+     * @Route("/artisanats", name="artisanats")
+     */
+    public function artisanats(Request $request): Response
+    {
+
+        $category = $request->query->get('category');
+
+        $page = $request->query->get('page');
+        if(is_null($page) || $page < 1) {
+            $page = 1;
+        }
+
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+
+        //----------------- GET LIST PRODUCT PAGINATE  ----------------------
+
+        $query = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->setFirstResult(($page - 1) * getenv('LIMIT'))
+            ->setMaxResults(getenv('LIMIT'))
+            //->orderBy('p.price', 'ASC')
+            ->getQuery();
+        //return new Paginator($query);
+
+        $products = $query->getResult();
+
+        //----------------- GET NB PAGE ----------------------
+        $queryCount = $repository->createQueryBuilder('p')
+            ->where('p.stock > :stock')
+            ->setParameter('stock', '0')
+            ->andWhere('p.category_id IN (:ints)')
+            ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->getQuery();
+
+        $countProducts = $queryCount->getResult();
+        $countPage = count($countProducts) / getenv('LIMIT');
+
+        //----------------- GET PANIER ----------------------
+        if(array_key_exists("commande", $_COOKIE) && count(get_object_vars(json_decode($_COOKIE["commande"]))) > 0) {
+            $tabCookie = get_object_vars(json_decode($_COOKIE["commande"]));
+            $query = $repository->createQueryBuilder('p')
+                ->where('p.stock > :stock')
+                ->setParameter('stock', '0')
+                ->andWhere('p.id IN (:ints)')
+                ->setParameter('ints', array_keys($tabCookie), \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+                ->getQuery();
+
+            $panierProducts = $query->getResult();
+        }else{
+            $tabCookie = null;
+            $panierProducts = null;
+        }
+
+        return $this->render('artisanats.html.twig', [
+            'products' => $products,
+            'nbpage' => ceil($countPage),
+            'page' => $page,
+            'cookiepanier' => $tabCookie,
+            'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
         ]);
     }
 
@@ -202,7 +334,7 @@ class DefaultController extends AbstractController
 
             $panierProducts = $query->getResult();
         }else{
-            return $this->redirectToRoute("boutique",array("panier" => "vide"),302);
+            return $this->redirectToRoute("brocante",array("panier" => "vide"),302);
         }
 
         $form = $this->createForm(CommandeType::class);

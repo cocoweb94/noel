@@ -1,0 +1,53 @@
+{# templates/default/boutique.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include 'header.html.twig' %}
+
+    <div class="main">
+        <div class="shop_top">
+            <div class="content-title">
+                 <h2>Artisanats</h2>
+                <div class="clear"></div>
+                <img src="images/artisanat.jpg" class="img-responsive" alt=""/>
+            </div>
+
+            <div class="container">
+                <div class="row" style="margin-bottom: 5%;">
+
+                    {% for product in products %}
+                        <div class="col-md-3 shop_box">
+                            <!--<a href="single.html">-->
+                                <img src="images/{{ product.photo|raw }}" class="img-responsive" alt=""/>
+                                <div class="shop_desc">
+                                    <h3>{{ product.name|raw }}</h3>
+                                    <p>{{ product.description|raw }}</p>
+                                    <span class="actual">{{ product.price|raw }}&euro;</span><br>
+                                    <ul class="buttons">
+                                        <li class="cart" data-id="{{ product.id }}"><a href="#">Ajouter au panier</a></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+                                </div>
+                            <!--</a>-->
+                        </div>
+
+                        {% if loop.index is divisible by(4) %}
+                            </div>
+                            <div class="row">
+                        {% endif %}
+
+                    {% else %}
+                        <div><em>Nous n'avons plus de marchandise en stock pour le moment.</em></div>
+                    {% endfor %}
+                </div>
+                <ul class="pagination">
+                    {% for i in 1..nbpage %}
+                        <li class="page-item {% if i == page %}active{% endif %}"><a href="{{ path('boutique', { 'page': i}) }}">{{ i }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html.twig' %}
+{% endblock %}

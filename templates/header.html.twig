@@ -13,8 +13,10 @@
                     <div class="menu">
                         <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                         <ul class="nav" id="nav">
-                            <li><a href="{{ path('boutique') }}">Boutique</a></li>
-                            <li><a href="{{ path('contact') }}">Contact</a></li>
+                            <li {% if path(app.request.attributes.get('_route') == "brocante" %} class="current"{%endif%}><a href="{{ path('brocante') }}">Brocante</a></li>
+                            <li {% if path(app.request.attributes.get('_route') == "paniers" %} class="current"{%endif%}><a href="{{ path('paniers') }}">Paniers Grourmands</a></li>
+                            <li {% if path(app.request.attributes.get('_route') == "artisanats" %} class="current"{%endif%}><a href="{{ path('artisanats') }}">Artisanats</a></li>
+                            <li {% if path(app.request.attributes.get('_route') == "contact" %} class="current"{%endif%}><a href="{{ path('contact') }}">Contact</a></li>
                             <div class="clear"></div>
                         </ul>
                     </div>
