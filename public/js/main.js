@@ -84,7 +84,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				if($(".closepanier").length == 1)
+				if($(".login_buttons").length == 0)
 					$("#panier").after( '<div class="login_buttons"><div class="check_button"><a href="/commande">Commander</a></div><div class="clear"></div></div>' );
 			},
 			error:function(xhr,status,error){
