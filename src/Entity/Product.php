@@ -54,7 +54,7 @@ class Product
     private $productOrders;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
      */
     private $category;
 
@@ -140,7 +140,7 @@ class Product
         return $this->category;
     }
 
-    public function setCategory(Categorie $category)
+    public function setCategory(Category $category)
     {
         $this->category = $category;
 

@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 
 /**
- * @ORM\Table(name="`categorie`")
+ * @ORM\Table(name="`category`")
  * @ORM\Entity
  */
-class Categorie
+class Category
 {
     /**
      * @ORM\Id
