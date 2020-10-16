@@ -58,9 +58,10 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 1], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->setFirstResult(($page - 1) * getenv('LIMIT'))
             ->setMaxResults(getenv('LIMIT'))
@@ -72,9 +73,10 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 1], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
@@ -123,9 +125,10 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 2], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->setFirstResult(($page - 1) * getenv('LIMIT'))
             ->setMaxResults(getenv('LIMIT'))
@@ -137,9 +140,10 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 2], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
@@ -189,9 +193,10 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->setFirstResult(($page - 1) * getenv('LIMIT'))
             ->setMaxResults(getenv('LIMIT'))
@@ -203,9 +208,10 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
+            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
-            ->andWhere('p.category_id IN (:ints)')
+            ->andWhere('c.id IN (:ints)')
             ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
