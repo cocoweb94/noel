@@ -43,7 +43,7 @@
                 </div>
                 <ul class="pagination">
                     {% for i in 1..nbpage %}
-                        <li class="page-item {% if i == page %}active{% endif %}"><a href="{{ path('boutique', { 'page': i}) }}">{{ i }}</a></li>
+                        <li class="page-item {% if i == page %}active{% endif %}"><a href="{{ path('artisanats', { 'page': i}) }}">{{ i }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
