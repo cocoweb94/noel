@@ -58,7 +58,7 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
@@ -73,7 +73,7 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
@@ -125,7 +125,7 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
@@ -140,7 +140,7 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
@@ -193,7 +193,7 @@ class DefaultController extends AbstractController
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
 
         $query = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
@@ -208,7 +208,7 @@ class DefaultController extends AbstractController
 
         //----------------- GET NB PAGE ----------------------
         $queryCount = $repository->createQueryBuilder('p')
-            ->leftJoin('p.category', 'c', 'WITH', 'p.category_id = c.id')
+            ->leftJoin('p.category', 'c')
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
