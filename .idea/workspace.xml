@@ -27,10 +27,10 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70886075">
-              <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.7357595">
+              <caret line="84" column="271" selection-start-line="84" selection-start-column="271" selection-end-line="84" selection-end-column="271" />
               <folding>
-                <element signature="e#8084#8111#0#HTML" expanded="true" />
+                <element signature="e#8092#8119#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -283,10 +283,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70886075">
-          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.7357595">
+          <caret line="84" column="271" selection-start-line="84" selection-start-column="271" selection-end-line="84" selection-end-column="271" />
           <folding>
-            <element signature="e#8084#8111#0#HTML" expanded="true" />
+            <element signature="e#8092#8119#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
