@@ -27,8 +27,18 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3322785">
-              <caret line="76" column="296" selection-start-line="76" selection-start-column="295" selection-end-line="76" selection-end-column="296" />
+            <state vertical-scroll-proportion="0.9509494">
+              <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/header.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="17" column="153" selection-start-line="17" selection-start-column="143" selection-end-line="17" selection-end-column="153" />
               <folding />
             </state>
           </provider>
@@ -210,10 +220,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="153" selection-start-line="17" selection-start-column="143" selection-end-line="17" selection-end-column="153" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322785">
-          <caret line="76" column="296" selection-start-line="76" selection-start-column="295" selection-end-line="76" selection-end-column="296" />
+        <state vertical-scroll-proportion="0.9509494">
+          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
           <folding />
         </state>
       </provider>
