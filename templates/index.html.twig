@@ -42,46 +42,45 @@
         <!--/slider -->
     </div>
     <div class="main">
-        <div class="content-top">
-            <h2>Article du march&eacute;</h2>
-            <p>Tout doit dispara&icirc;tre</p>
-            <div class="close_but"><i class="close1"> </i></div>
-            <ul id="flexiselDemo3">
-                <li><img src="images/product1.jpg" /></li>
-                <li><img src="images/product2.jpg" /></li>
-                <li><img src="images/product3.jpg" /></li>
-                <li><img src="images/product4.jpg" /></li>
-                <li><img src="images/product5.jpg" /></li>
-            </ul>
-            <script type="text/javascript">
-                $(window).load(function() {
-                    $("#flexiselDemo3").flexisel({
-                        visibleItems: 5,
-                        animationSpeed: 1000,
-                        autoPlay: true,
-                        autoPlaySpeed: 3000,
-                        pauseOnHover: true,
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint:480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint:640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint:768,
-                                visibleItems: 3
-                            }
+    <div class="content-top">
+        <h2>Article du march&eacute;</h2>
+        <p>Tout doit dispara&icirc;tre</p>
+        <div class="close_but"><i class="close1"> </i></div>
+        <ul id="flexiselDemo3">
+            <li><img src="images/product1.jpg" /></li>
+            <li><img src="images/product2.jpg" /></li>
+            <li><img src="images/product3.jpg" /></li>
+            <li><img src="images/product4.jpg" /></li>
+            <li><img src="images/product5.jpg" /></li>
+        </ul>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $("#flexiselDemo3").flexisel({
+                    visibleItems: 5,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint:480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint:640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint:768,
+                            visibleItems: 3
                         }
-                    });
-
+                    }
                 });
-            </script>
-            <script type="text/javascript" src="js/jquery.flexisel.js"></script>
-        </div>
+
+            });
+        </script>
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
     </div>
     <div class="content-bottom">
         <div class="container">
@@ -94,7 +93,14 @@
             </div>
         </div>
     </div>
-    <!--<div class="features">
+    <div class="col-md-12">
+        <ul class="team_list">
+         <h4>Vision Statement</h4>
+         <p class="m_7">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+         <img src="images/diaconat.jpg" class="img-responsive" alt="">
+      </ul>
+    </div>
+    <div class="features">
         <div class="container">
             <h3 class="m_3">Features</h3>
             <div class="close_but"><i class="close1"> </i></div>
@@ -154,8 +160,7 @@
                 </div>
             </div>
          </div>
-        </div>
-    </div>-->
+    </div>
 
     {% include 'footer.html.twig' %}
 
