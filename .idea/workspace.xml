@@ -62,8 +62,8 @@
       <file leaf-file-name="contact.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/contact.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35601267">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.38291138">
+              <caret line="16" column="154" selection-start-line="16" selection-start-column="154" selection-end-line="16" selection-end-column="154" />
               <folding />
             </state>
           </provider>
@@ -291,8 +291,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35601267">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.38291138">
+          <caret line="16" column="154" selection-start-line="16" selection-start-column="154" selection-end-line="16" selection-end-column="154" />
           <folding />
         </state>
       </provider>
