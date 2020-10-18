@@ -12,7 +12,7 @@
                     </div>
                     <div class="menu">
                         <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
-                        {{ path(app.request.attributes.get('_route')) }}
+                        {{ path(app.request.get('_route')) }}
                         <ul class="nav" id="nav">
                             <li {% if path(app.request.attributes.get('_route')) == "homepage" %} class="current"{%endif%}><a href="{{ path('homepage') }}">Accueil</a></li>
                             <li {% if path(app.request.attributes.get('_route')) == "brocante" %} class="current"{%endif%}><a href="{{ path('brocante') }}">Brocante</a></li>
