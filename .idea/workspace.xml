@@ -62,10 +62,13 @@
       <file leaf-file-name="contact.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/contact.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49050632">
-              <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.4636076">
+              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
               <folding>
-                <element signature="e#906#933#0#HTML" expanded="true" />
+                <element signature="e#478#505#0#HTML" expanded="true" />
+                <element signature="e#750#777#0#HTML" expanded="true" />
+                <element signature="e#875#902#0#HTML" expanded="true" />
+                <element signature="e#990#1017#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -293,10 +296,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49050632">
-          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.4636076">
+          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
           <folding>
-            <element signature="e#906#933#0#HTML" expanded="true" />
+            <element signature="e#478#505#0#HTML" expanded="true" />
+            <element signature="e#750#777#0#HTML" expanded="true" />
+            <element signature="e#875#902#0#HTML" expanded="true" />
+            <element signature="e#990#1017#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
