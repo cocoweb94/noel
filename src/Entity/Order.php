@@ -46,6 +46,13 @@ class Order
     private $payment;
 
     /**
+     * @var datetime $livraison
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $livraison;
+
+    /**
      * @ORM\OneToMany(targetEntity="OrderProduct", mappedBy="order", fetch="EXTRA_LAZY")
      */
     private $productsOrder;
@@ -118,6 +125,18 @@ class Order
     public function setPayment(string $payment)
     {
         $this->payment = $payment;
+
+        return $this;
+    }
+
+    public function getLivraison()
+    {
+        return $this->livraison;
+    }
+
+    public function setLivraison(\DateTime $livraison)
+    {
+        $this->livraison = $livraison;
 
         return $this;
     }
