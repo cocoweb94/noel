@@ -1141,7 +1141,7 @@ ul.team_list{
 	list-style:none;
 }
 ul.team_list h4{
-	color: #555;
+	color: #000;
 	margin-bottom: 20px;
 	font-size: 1.5em;
 	line-height: 1.2;
@@ -1163,7 +1163,7 @@ ul.team_list li a:hover {
 	color:#444;
 }
 ul.team_list li p{
-	color:#888;
+	color:#000;
 	font-size:0.85em;
 	line-height:1.5em;
 }
