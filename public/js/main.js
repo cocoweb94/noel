@@ -55,7 +55,7 @@ $(document).ready(function() {
 				data: getCookie("commande"),
 				success:function(result){
 					$("#panier").html(result);
-					$("#articlePanier").html("Mon panier ("+$(".closepanier").length+")");
+					$("#articlePanier").html("<b>Mon panier ("+$(".closepanier").length+")</b>");
 					if($(".closepanier").length == 0)
 						$(".login_buttons").remove();
 				},
@@ -85,7 +85,7 @@ $(document).ready(function() {
 			data: getCookie("commande"),
 			success:function(result){
 				$("#panier").html(result);
-				$("#articlePanier").html("Mon panier ("+$(".closepanier").length+")");
+				$("#articlePanier").html("<b>Mon panier ("+$(".closepanier").length+")</b>");
 				if($(".login_buttons").length == 0)
 					$("#panier").after( '<div class="login_buttons"><div class="check_button"><a href="/commande">Commander</a></div><div class="clear"></div></div>' );
 			},
