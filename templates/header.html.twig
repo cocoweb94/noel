@@ -18,6 +18,7 @@
                             <li {% if path(app.request.attributes.get('_route')) == path('paniers') %} class="current"{%endif%}><a href="{{ path('paniers') }}">Paniers Grourmands</a></li>
                             <li {% if path(app.request.attributes.get('_route')) == path('artisanats') %} class="current"{%endif%}><a href="{{ path('artisanats') }}">Artisanats</a></li>
                             <li {% if path(app.request.attributes.get('_route')) == path('contact') %} class="current"{%endif%}><a href="{{ path('contact') }}">Contact</a></li>
+                            <li><a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">Faire un don</a></li>
                             <div class="clear"></div>
                         </ul>
                     </div>
