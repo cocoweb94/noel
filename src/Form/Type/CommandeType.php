@@ -34,13 +34,22 @@ class CommandeType extends AbstractType
                 'required'   => true,
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Email', "pattern" => "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$"],
             ])
+            ->add('livraison', ChoiceType::class, [
+                'label'=>'Date de retrait',
+                'choices'  => [
+                    'Culte 1' => '12-06-2020',
+                    'Culte 2' => '12-13-2020',
+                    'Culte 3' => '12-20-2020',
+                    'Culte 4' => '12-27-2020',
+                ],
+                'attr' => ['class' => 'form-control'],
+            ])
             ->add('paiement', ChoiceType::class, [
                 'choices'  => [
                     'Carte banquaire' => 'Carte banquaire',
                     utf8_encode ( 'Chèques' ) => 'Cheque',
-                    utf8_encode ( 'Espèces' ) => 'Especes',
                 ],
-                'attr' => ['class' => 'form-control', "id" => "tarifsResa"],
+                'attr' => ['class' => 'form-control'],
             ]);
     }
 
