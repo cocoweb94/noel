@@ -37,10 +37,10 @@ class CommandeType extends AbstractType
             ->add('livraison', ChoiceType::class, [
                 'label'=>'Date de retrait',
                 'choices'  => [
-                    'Culte 1' => '12-06-2020',
-                    'Culte 2' => '12-13-2020',
-                    'Culte 3' => '12-20-2020',
-                    'Culte 4' => '12-27-2020',
+                    utf8_encode ( '06 décembre 2020' ) => '12-06-2020',
+                    utf8_encode ( '13 décembre 2020' ) => '12-13-2020',
+                    utf8_encode ( '20 décembre 2020' ) => '12-20-2020',
+                    utf8_encode ( '27 décembre 2020' ) => '12-27-2020',
                 ],
                 'attr' => ['class' => 'form-control'],
             ])
