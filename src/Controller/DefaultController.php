@@ -340,7 +340,7 @@ class DefaultController extends AbstractController
                 ->setParameter('ints', array_keys($tabCookie), \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
                 ->getQuery();
 
-            $panierProducts = $query->getResult();
+            $panierProducts = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
         }else{
             return $this->redirectToRoute("brocante",array("panier" => "vide"),302);
         }
