@@ -353,7 +353,7 @@ class DefaultController extends AbstractController
             $order->setName($reqPost['nom']);
             $order->setLastName($reqPost['prenom']);
             $order->setEmail($reqPost['email']);
-            $order->setLivraison($reqPost['livraison']);
+            $order->setLivraison(new DateTime($reqPost['livraison']));
             $order->setTel($reqPost['tel']);
 
             $entityManager = $this->getDoctrine()->getManager();

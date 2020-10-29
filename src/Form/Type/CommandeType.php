@@ -43,10 +43,10 @@ class CommandeType extends AbstractType
             ->add('livraison', ChoiceType::class, [
                 'label'=>'Votre choix pour le retrait des commandes (sortie des cultes)',
                 'choices'  => [
-                    utf8_encode ( 'dimanche 29 novembre' ) => '11-29-2020',
-                    utf8_encode ( 'dimanche 6 décembre' ) => '12-06-2020',
-                    utf8_encode ( 'samedi 12 décembre' ) => '12-12-2020',
-                    utf8_encode ( 'dimanche 13 décembre' ) => '12-13-2020',
+                    utf8_encode ( 'dimanche 29 novembre' ) => '2020-11-29',
+                    utf8_encode ( 'dimanche 6 décembre' ) => '2020-12-06',
+                    utf8_encode ( 'samedi 12 décembre' ) => '2020-12-12',
+                    utf8_encode ( 'dimanche 13 décembre' ) => '2020-12-13',
                 ],
                 'attr' => ['class' => 'form-control'],
             ]);
