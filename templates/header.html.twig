@@ -14,9 +14,9 @@
                         <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                         <ul class="nav" id="nav">
                             <li {% if path(app.request.attributes.get('_route')) == path('homepage') %} class="current"{%endif%}><a href="{{ path('homepage') }}">Accueil</a></li>
-                            <li {% if path(app.request.attributes.get('_route')) == path('brocante') %} class="current"{%endif%}><a href="{{ path('brocante') }}">Brocante</a></li>
-                            <li {% if path(app.request.attributes.get('_route')) == path('paniers') %} class="current"{%endif%}><a href="{{ path('paniers') }}">Paniers Grourmands</a></li>
-                            <li {% if path(app.request.attributes.get('_route')) == path('artisanats') %} class="current"{%endif%}><a href="{{ path('artisanats') }}">Artisanats</a></li>
+                            <li {% if path(app.request.attributes.get('_route')) == path('gourmandises') %} class="current"{%endif%}><a href="{{ path('gourmandises') }}">Gourmandises</a></li>
+                            <li {% if path(app.request.attributes.get('_route')) == path('articles') %} class="current"{%endif%}><a href="{{ path('articles') }}">Articles de Noel</a></li>
+                            <li {% if path(app.request.attributes.get('_route')) == path('loterie') %} class="current"{%endif%}><a href="{{ path('loterie') }}">Loterie</a></li>
                             <li {% if path(app.request.attributes.get('_route')) == path('contact') %} class="current"{%endif%}><a href="{{ path('contact') }}">Nous aider</a></li>
                             <li><a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">Faire un don</a></li>
                             <div class="clear"></div>

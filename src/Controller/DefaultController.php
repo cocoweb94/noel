@@ -44,9 +44,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/brocante", name="brocante")
+     * @Route("/gourmandises", name="gourmandises")
      */
-    public function brocante(Request $request): Response
+    public function gourmandises(Request $request): Response
     {
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
@@ -99,7 +99,7 @@ class DefaultController extends AbstractController
             $panierProducts = null;
         }
 
-        return $this->render('brocante.html.twig', [
+        return $this->render('gourmandises.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
@@ -111,9 +111,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/paniers", name="paniers")
+     * @Route("/articles", name="articles")
      */
-    public function paniers(Request $request): Response
+    public function articles(Request $request): Response
     {
         $page = $request->query->get('page');
         if(is_null($page) || $page < 1) {
@@ -166,7 +166,7 @@ class DefaultController extends AbstractController
             $panierProducts = null;
         }
 
-        return $this->render('paniers.html.twig', [
+        return $this->render('articles.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
@@ -176,9 +176,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/artisanats", name="artisanats")
+     * @Route("/loterie", name="loterie")
      */
-    public function artisanats(Request $request): Response
+    public function loterie(Request $request): Response
     {
 
         $category = $request->query->get('category');
@@ -234,7 +234,7 @@ class DefaultController extends AbstractController
             $panierProducts = null;
         }
 
-        return $this->render('artisanats.html.twig', [
+        return $this->render('loterie.html.twig', [
             'products' => $products,
             'nbpage' => ceil($countPage),
             'page' => $page,
