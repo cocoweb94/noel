@@ -31,7 +31,7 @@ class Order
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=255, required=false)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $email;
 
@@ -41,7 +41,7 @@ class Order
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=20, required=false)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $tel;
 
