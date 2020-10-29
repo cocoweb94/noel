@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\Type\ContactType;
 use App\Form\Type\CommandeType;
 use App\Entity\Product;
+use App\Entity\Order;
+use App\Entity\OrderProduct;
 
 
 class DefaultController extends AbstractController
@@ -347,6 +349,21 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $reqPost = $form->getData();
+            $order = new Order();
+            $order->setName($reqPost['nom']);
+            $order->setLastName($reqPost['prenom']);
+            $order->setEmail($reqPost['email']);
+            $order->setLivraison($reqPost['livraison']);
+            $order->setTel($reqPost['tel']);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($order);
+
+            foreach($panierProducts as $product){
+                var_dump($product);
+            }
+
+            $entityManager->flush();
             var_dump($reqPost);die;
             /*$mail = new Mail($reqPost["email"], $reqPost);
             $sendMail = $mail->sendContactMail();
