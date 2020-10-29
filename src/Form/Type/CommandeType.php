@@ -34,7 +34,6 @@ class CommandeType extends AbstractType
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Email', "pattern" => "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$"],
             ])
             ->add('tel', TextType::class, [
-                'constraints' => [],
                 'attr' => ['class' => 'form-control', 'placeholder' => utf8_encode ('Téléphone')],
             ])
             ->add('livraison', ChoiceType::class, [
