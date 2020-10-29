@@ -43,7 +43,7 @@ class Order
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $payment;
+    private $tel;
 
     /**
      * @var datetime $livraison
@@ -117,14 +117,14 @@ class Order
         return $this;
     }
 
-    public function getPayment()
+    public function getTel()
     {
-        return $this->payment;
+        return $this->tel;
     }
 
-    public function setPayment(string $payment)
+    public function setTel(string $tel)
     {
-        $this->payment = $payment;
+        $this->tel = $tel;
 
         return $this;
     }

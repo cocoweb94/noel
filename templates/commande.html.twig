@@ -9,7 +9,10 @@
         <div class="shop_top">
             <div class="content-title">
                  <h2>Votre commande</h2>
-                <p style="color: #C82829; text-align: center;"><b>Les photos sont repr&eacute;sentatives et non contractuelles des aricles disponibles</b></p>
+                <p style="color: #C82829; text-align: center;">
+                    <i>Merci de remplir les champs :  vos coordonn&eacute;es sont captur&eacute;es uniquement pour l'envoi de votre bon de commande (par email) et la  gestion des retraits</i>
+                    <b>Le paiement de votre commande se fera sur place le jour du retrait ; Pr&eacute;f&eacute;rez le paiement par ch&egrave;que.</b>
+                </p>
                 <div class="clear"></div>
             </div>
 
@@ -46,9 +49,9 @@
 
                                     {{ form_row(form.email) }}
 
-                                    {{ form_row(form.livraison) }}
+                                    {{ form_row(form.tel) }}
 
-                                    {{ form_row(form.paiement) }}
+                                    {{ form_row(form.livraison) }}
 
                             </div>
                         <div class="clear"></div>

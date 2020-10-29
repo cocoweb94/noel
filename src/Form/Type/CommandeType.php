@@ -31,23 +31,19 @@ class CommandeType extends AbstractType
                 'attr' => ['class' => 'form-control', 'placeholder' => utf8_encode ('Prénom')],
             ])
             ->add('email', EmailType::class, [
-                'required'   => true,
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Email', "pattern" => "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$"],
             ])
-            ->add('livraison', ChoiceType::class, [
-                'label'=>'Date de retrait',
-                'choices'  => [
-                    utf8_encode ( '06 décembre 2020' ) => '12-06-2020',
-                    utf8_encode ( '13 décembre 2020' ) => '12-13-2020',
-                    utf8_encode ( '20 décembre 2020' ) => '12-20-2020',
-                    utf8_encode ( '27 décembre 2020' ) => '12-27-2020',
-                ],
-                'attr' => ['class' => 'form-control'],
+            ->add('tel', TextType::class, [
+                'constraints' => [],
+                'attr' => ['class' => 'form-control', 'placeholder' => utf8_encode ('Téléphone')],
             ])
-            ->add('paiement', ChoiceType::class, [
+            ->add('livraison', ChoiceType::class, [
+                'label'=>'Votre choix pour le retrait des commandes (sortie des cultes)',
                 'choices'  => [
-                    'Carte banquaire' => 'Carte banquaire',
-                    utf8_encode ( 'Chèques' ) => 'Cheque',
+                    utf8_encode ( 'dimanche 29 novembre' ) => '11-29-2020',
+                    utf8_encode ( 'dimanche 6 décembre' ) => '12-06-2020',
+                    utf8_encode ( 'samedi 12 décembre' ) => '12-12-2020',
+                    utf8_encode ( 'dimanche 13 décembre' ) => '12-13-2020',
                 ],
                 'attr' => ['class' => 'form-control'],
             ]);
