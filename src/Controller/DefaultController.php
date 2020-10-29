@@ -197,7 +197,7 @@ class DefaultController extends AbstractController
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
-            ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->setParameter('ints', [4], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->setFirstResult(($page - 1) * getenv('LIMIT'))
             ->setMaxResults(getenv('LIMIT'))
             //->orderBy('p.price', 'ASC')
@@ -212,7 +212,7 @@ class DefaultController extends AbstractController
             ->where('p.stock > :stock')
             ->setParameter('stock', '0')
             ->andWhere('c.id IN (:ints)')
-            ->setParameter('ints', [4, 3], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
+            ->setParameter('ints', [4], \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
             ->getQuery();
 
         $countProducts = $queryCount->getResult();
