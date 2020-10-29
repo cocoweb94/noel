@@ -396,7 +396,7 @@ li.list_desc h4 a:hover{
 .button{
 	text-align: center;
 }
-.button a{
+.button p{
 	color:#fff;
 	font-size:0.85em;
 	text-transform:uppercase;
@@ -413,7 +413,7 @@ li.list_desc h4 a:hover{
 	transition: all 0.3s;
 	background: #000;
 }
-.button a:hover{
+.button p:hover{
 	background:#222;
 }
 .login_button{
