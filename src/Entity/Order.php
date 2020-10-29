@@ -98,7 +98,7 @@ class Order
         return $this->email;
     }
 
-    public function setEmail(string $email)
+    public function setEmail($email)
     {
         $this->email = $email;
 
@@ -122,7 +122,7 @@ class Order
         return $this->tel;
     }
 
-    public function setTel(string $tel)
+    public function setTel($tel)
     {
         $this->tel = $tel;
 
