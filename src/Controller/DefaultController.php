@@ -254,7 +254,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request): Response
+    public function contact(Request $request, \Swift_Mailer $mailer): Response
     {
         //----------------- GET PANIER ----------------------
         if(array_key_exists("commande", $_COOKIE) && count(get_object_vars(json_decode($_COOKIE["commande"]))) > 0) {
@@ -277,10 +277,17 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $reqPost = $form->getData();
-            var_dump($reqPost);die;
-            /*$mail = new Mail($reqPost["email"], $reqPost);
-            $sendMail = $mail->sendContactMail();
-            $mailer->send($sendMail);*/
+
+            $message = (new \Swift_Message('Demande infos Marché de noel : '. $reqPost['nom'] . ' '. $reqPost['prenom']))
+                ->setFrom($reqPost['nom'])
+                ->setTo($reqPost['email'])
+                ->setBody(
+                    "<p>" . $reqPost['sujet'] . "</p>" . "<p>" . $reqPost['message'] . "</p>",
+                    'text/html'
+                )
+            ;
+
+            $mailer->send($message);
         }
         return $this->render('contact.html.twig', [
             'form' => $form->createView(),
@@ -431,8 +438,7 @@ class DefaultController extends AbstractController
                 )
             ;
 
-            $mail = $mailer->send($message);
-            var_dump($mail);die;
+            $mailer->send($message);
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
         }

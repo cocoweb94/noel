@@ -43,8 +43,8 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5885023">
-              <caret line="434" column="32" selection-start-line="434" selection-start-column="32" selection-end-line="434" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.7685325">
+              <caret line="440" column="12" selection-start-line="440" selection-start-column="12" selection-end-line="440" selection-end-column="12" />
               <folding>
                 <element signature="e#73#119#0#PHP" expanded="true" />
               </folding>
@@ -55,8 +55,8 @@
       <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state vertical-scroll-proportion="-8.846154">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -824,14 +824,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools/Mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.576923">
@@ -880,10 +872,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.846154">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5885023">
-          <caret line="434" column="32" selection-start-line="434" selection-start-column="32" selection-end-line="434" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7685325">
+          <caret line="440" column="12" selection-start-line="440" selection-start-column="12" selection-end-line="440" selection-end-column="12" />
           <folding>
             <element signature="e#73#119#0#PHP" expanded="true" />
           </folding>
