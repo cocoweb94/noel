@@ -24,7 +24,10 @@ jQuery.parseJSON = function( data ) {
 }
 
 $(document).ready(function() {
-	if(getCookie("commande") == ""){
+
+	const urlParams = new URLSearchParams(queryString);
+
+	if(getCookie("commande") == "" || urlParams.get('commande') == "valide"){
 		setCookie("{}");
 	}
 	$(".dropdown img.flag").addClass("flagvisibility");
