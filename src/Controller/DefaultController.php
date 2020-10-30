@@ -279,7 +279,7 @@ class DefaultController extends AbstractController
             $reqPost = $form->getData();
 
             $message = (new \Swift_Message('Demande infos Marché de noel : '. $reqPost['nom'] . ' '. $reqPost['prenom']))
-                ->setFrom($reqPost['nom'])
+                ->setFrom($reqPost['email'])
                 ->setTo("fcoelho92@hotmail.com")
                 ->setBody(
                     "<p>" . $reqPost['sujet'] . "</p>" . "<p>" . $reqPost['message'] . "</p>",
