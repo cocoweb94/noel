@@ -27,11 +27,22 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1434782">
-              <caret line="87" column="280" selection-start-line="87" selection-start-column="280" selection-end-line="87" selection-end-column="280" />
+            <state vertical-scroll-proportion="0.27101448">
+              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding>
-                <element signature="e#1218#1253#0#HTML" expanded="true" />
+                <element signature="e#312#331#0#HTML" expanded="true" />
+                <element signature="e#1278#1313#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.73077">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,16 +129,6 @@
               <folding>
                 <element signature="e#871#898#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loterie.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/loterie.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -487,7 +488,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="46" />
           <folding>
-            <element signature="e#1218#1253#0#HTML" expanded="true" />
+            <element signature="e#312#331#0#HTML" expanded="true" />
+            <element signature="e#1278#1313#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -578,14 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.862068">
           <caret line="415" column="16" selection-start-line="415" selection-start-column="16" selection-end-line="415" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="23" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -681,12 +675,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.73077">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1434782">
-          <caret line="87" column="280" selection-start-line="87" selection-start-column="280" selection-end-line="87" selection-end-column="280" />
+        <state vertical-scroll-proportion="0.27101448">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding>
-            <element signature="e#1218#1253#0#HTML" expanded="true" />
+            <element signature="e#312#331#0#HTML" expanded="true" />
+            <element signature="e#1278#1313#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
