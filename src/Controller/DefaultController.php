@@ -347,7 +347,7 @@ class DefaultController extends AbstractController
                 ->getQuery();
 
             $panierProducts = $query->getResult();
-            $tabpanierProducts = $query->getResult(Query::HYDRATE_ARRAY);
+            $tabpanierProducts = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
         }else{
             return $this->redirectToRoute("gourmandises",array("panier" => "vide"),302);
         }
