@@ -27,11 +27,11 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56666666">
-              <caret line="23" column="144" selection-start-line="23" selection-start-column="144" selection-end-line="23" selection-end-column="144" />
+            <state vertical-scroll-proportion="0.46811596">
+              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding>
-                <element signature="e#578#620#0#HTML" expanded="true" />
-                <element signature="e#1259#1294#0#HTML" expanded="true" />
+                <element signature="e#578#621#0#HTML" expanded="true" />
+                <element signature="e#1260#1295#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -488,8 +488,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="46" />
           <folding>
-            <element signature="e#578#620#0#HTML" expanded="true" />
-            <element signature="e#1259#1294#0#HTML" expanded="true" />
+            <element signature="e#578#621#0#HTML" expanded="true" />
+            <element signature="e#1260#1295#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,11 +685,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56666666">
-          <caret line="23" column="144" selection-start-line="23" selection-start-column="144" selection-end-line="23" selection-end-column="144" />
+        <state vertical-scroll-proportion="0.46811596">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding>
-            <element signature="e#578#620#0#HTML" expanded="true" />
-            <element signature="e#1259#1294#0#HTML" expanded="true" />
+            <element signature="e#578#621#0#HTML" expanded="true" />
+            <element signature="e#1260#1295#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
