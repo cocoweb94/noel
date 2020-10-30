@@ -13,6 +13,7 @@ use App\Form\Type\CommandeType;
 use App\Entity\Product;
 use App\Entity\Order;
 use App\Entity\OrderProduct;
+use App\Entity\Lotterie;
 
 
 class DefaultController extends AbstractController
@@ -371,10 +372,32 @@ class DefaultController extends AbstractController
                 $orderp->setProduct($product);
                 $orderp->setAmount($quantity);
                 $entityManager->persist($orderp);
-
+                // set stock product
                 $product->setStock($product->getStock() - $quantity);
-
+                // cacule price commande
                 $price += $product->getPrice() * $tabCookie[$product->getId()];
+
+                // create loterie ticket if in commade
+                $tabLoterie = [18 => 1, 19 => 5, 20 => 10, 21 => 20];
+                if(in_array($product->getId(), $tabLoterie)){
+                    for ($i = 1; $i <= $tabLoterie[$product->getId()]; $i++) {
+                        $ticket = new Lotterie();
+                        $ticket->setName($reqPost['nom']);
+                        $ticket->setLastName($reqPost['prenom']);
+                        $ticket->setEmail($reqPost['email']);
+                        $ticket->setTirage(new \DateTime($reqPost['livraison']));
+
+                        $ticketExist = true;
+                        while($ticketExist != false){
+                            $numTicket = rand(0000,9999);
+
+                            $repository = $this->getDoctrine()->getRepository(Lotterie::class);
+                            $ticketExist = $repository->findOneBy(['ticket' => $numTicket]);
+                            var_dump($ticketExist);die;
+                        }
+
+                    }
+                }
 
             }
 
