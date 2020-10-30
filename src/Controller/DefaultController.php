@@ -340,7 +340,7 @@ class DefaultController extends AbstractController
                 ->setParameter('ints', array_keys($tabCookie), \Doctrine\DBAL\Connection::PARAM_INT_ARRAY)
                 ->getQuery();
 
-            $panierProducts = $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+            $panierProducts = $query->getResult();
         }else{
             return $this->redirectToRoute("brocante",array("panier" => "vide"),302);
         }
@@ -357,11 +357,23 @@ class DefaultController extends AbstractController
             $order->setTel($reqPost['tel']);
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($order);
+            $price = 0;
 
             foreach($panierProducts as $product){
-                var_dump($product);
+                var_dump($product->getId());
+                $orderp = new OrderProduct();
+                $orderp->setOrder($order);
+                $orderp->setProduct($product);
+                $orderp->setAmount($tabCookie[$product->getId()]);
+                $entityManager->persist($orderp);
+
+                $price += $product->getPrice() * $tabCookie[$product->getId()];
+                var_dump($price);
+
             }
+
+            $order->setPrice($price);
+            $entityManager->persist($order);
 
             $entityManager->flush();
             var_dump($reqPost);die;
