@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fec28d0-fa16-4a62-a53c-20ab8b45fac4" name="Default" comment="" />
+    <list default="true" id="3fec28d0-fa16-4a62-a53c-20ab8b45fac4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html.twig" afterPath="$PROJECT_DIR$/templates/index.html.twig" />
+    </list>
     <ignored path="noel.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,17 +24,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.44347826">
+              <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding>
-                <element signature="e#605#628#0#HTML" expanded="true" />
-                <element signature="e#724#749#0#HTML" expanded="true" />
-                <element signature="e#841#879#0#HTML" expanded="true" />
-                <element signature="e#1244#1279#0#HTML" expanded="true" />
-                <element signature="e#6269#6296#0#HTML" expanded="true" />
+                <element signature="e#700#725#0#HTML" expanded="true" />
+                <element signature="e#817#855#0#HTML" expanded="true" />
+                <element signature="e#1220#1255#0#HTML" expanded="true" />
+                <element signature="e#6245#6272#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="-7.8965516">
               <caret line="3120" column="6" selection-start-line="3120" selection-start-column="1" selection-end-line="3120" selection-end-column="6" />
               <folding />
             </state>
@@ -471,11 +472,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="46" />
           <folding>
-            <element signature="e#605#628#0#HTML" expanded="true" />
-            <element signature="e#724#749#0#HTML" expanded="true" />
-            <element signature="e#841#879#0#HTML" expanded="true" />
-            <element signature="e#1244#1279#0#HTML" expanded="true" />
-            <element signature="e#6269#6296#0#HTML" expanded="true" />
+            <element signature="e#700#725#0#HTML" expanded="true" />
+            <element signature="e#817#855#0#HTML" expanded="true" />
+            <element signature="e#1220#1255#0#HTML" expanded="true" />
+            <element signature="e#6245#6272#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,20 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-          <folding>
-            <element signature="e#605#628#0#HTML" expanded="true" />
-            <element signature="e#724#749#0#HTML" expanded="true" />
-            <element signature="e#841#879#0#HTML" expanded="true" />
-            <element signature="e#1244#1279#0#HTML" expanded="true" />
-            <element signature="e#6269#6296#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5555553">
@@ -685,9 +671,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="-7.8965516">
           <caret line="3120" column="6" selection-start-line="3120" selection-start-column="1" selection-end-line="3120" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44347826">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding>
+            <element signature="e#700#725#0#HTML" expanded="true" />
+            <element signature="e#817#855#0#HTML" expanded="true" />
+            <element signature="e#1220#1255#0#HTML" expanded="true" />
+            <element signature="e#6245#6272#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
