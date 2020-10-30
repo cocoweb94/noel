@@ -27,10 +27,14 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19710144">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46811596">
+              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
               <folding>
-                <element signature="e#1243#1278#0#HTML" expanded="true" />
+                <element signature="e#698#723#0#HTML" expanded="true" />
+                <element signature="e#815#853#0#HTML" expanded="true" />
+                <element signature="e#1734#1759#0#HTML" expanded="true" />
+                <element signature="e#1851#1889#0#HTML" expanded="true" />
+                <element signature="e#8140#8167#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -487,7 +491,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="46" />
           <folding>
-            <element signature="e#1243#1278#0#HTML" expanded="true" />
+            <element signature="e#698#723#0#HTML" expanded="true" />
+            <element signature="e#815#853#0#HTML" expanded="true" />
+            <element signature="e#1734#1759#0#HTML" expanded="true" />
+            <element signature="e#1851#1889#0#HTML" expanded="true" />
+            <element signature="e#8140#8167#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -683,10 +691,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19710144">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46811596">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
           <folding>
-            <element signature="e#1243#1278#0#HTML" expanded="true" />
+            <element signature="e#698#723#0#HTML" expanded="true" />
+            <element signature="e#815#853#0#HTML" expanded="true" />
+            <element signature="e#1734#1759#0#HTML" expanded="true" />
+            <element signature="e#1851#1889#0#HTML" expanded="true" />
+            <element signature="e#8140#8167#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
