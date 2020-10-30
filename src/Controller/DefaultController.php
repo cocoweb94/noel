@@ -363,6 +363,7 @@ class DefaultController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $price = 0;
+            $tabNumTicket = [];
 
             foreach($panierProducts as $product){
                 $quantity = $tabCookie[$product->getId()];
@@ -379,7 +380,6 @@ class DefaultController extends AbstractController
 
                 // create loterie ticket if in commade
                 $tabLoterie = [18 => 1, 19 => 5, 20 => 10, 21 => 20];
-                $tabNumTicket = [];
                 if(array_key_exists($product->getId(), $tabLoterie)){
                     for ($i = 1; $i <= $tabLoterie[$product->getId()]; $i++) {
                         $ticket = new Lotterie();
