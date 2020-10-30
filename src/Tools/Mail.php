@@ -28,7 +28,7 @@ class Mail
         return $email;
     }
 
-    public function sendReservationMail($nom, $prenom, $orderId, $livraison, \Swift_Mailer $mailer){
+    public function sendReservationMail($nom, $prenom, $orderId, $livraison, $mailer){
         $date = date_format(new \DateTime('now'), 'd/m/Y H:i');
         $message = (new \Swift_Message('Confirmation de commande Marché de noël du '. $date))
             ->setFrom('contact@diaconat-grenoble.org')

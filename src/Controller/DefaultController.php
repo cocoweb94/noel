@@ -413,7 +413,7 @@ class DefaultController extends AbstractController
             $entityManager->flush();
 
             $mail = new Mail($reqPost['email'], [$tabpanierProducts, $tabCookie, $tabNumTicket]);
-            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison']));
+            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison'],  new \Swift_Mailer));
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
         }
