@@ -388,13 +388,15 @@ class DefaultController extends AbstractController
                         $ticket->setTirage(new \DateTime($reqPost['livraison']));
 
                         $ticketExist = true;
-                        while($ticketExist != false){
+                        while($ticketExist != NULL){
                             $numTicket = rand(0000,9999);
 
                             $repository = $this->getDoctrine()->getRepository(Lotterie::class);
                             $ticketExist = $repository->findOneBy(['ticket' => $numTicket]);
-                            var_dump($ticketExist);die;
                         }
+
+                        $ticket->setTicket($numTicket);
+                        $entityManager->persist($ticket);
 
                     }
                 }
