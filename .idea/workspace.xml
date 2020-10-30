@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3fec28d0-fa16-4a62-a53c-20ab8b45fac4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tools/Mail.php" afterPath="$PROJECT_DIR$/src/Tools/Mail.php" />
     </list>
     <ignored path="noel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +43,21 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56278366">
-              <caret line="415" column="148" selection-start-line="415" selection-start-column="148" selection-end-line="415" selection-end-column="148" />
+            <state vertical-scroll-proportion="-1.494705">
+              <caret line="335" column="68" selection-start-line="335" selection-start-column="68" selection-end-line="335" selection-end-column="68" />
               <folding>
                 <element signature="e#73#119#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -823,14 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4188406">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.896552">
@@ -840,6 +841,14 @@
       </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools/Mail.php">
@@ -852,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56278366">
-          <caret line="415" column="148" selection-start-line="415" selection-start-column="148" selection-end-line="415" selection-end-column="148" />
+        <state vertical-scroll-proportion="-1.494705">
+          <caret line="335" column="68" selection-start-line="335" selection-start-column="68" selection-end-line="335" selection-end-column="68" />
           <folding>
             <element signature="e#73#119#0#PHP" expanded="true" />
           </folding>

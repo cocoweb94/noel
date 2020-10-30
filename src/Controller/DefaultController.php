@@ -333,7 +333,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/commande", name="commande")
      */
-    public function commande(Request $request)
+    public function commande(Request $request, \Swift_Mailer $mailer)
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
         //----------------- GET PANIER ----------------------
@@ -413,7 +413,7 @@ class DefaultController extends AbstractController
             $entityManager->flush();
 
             $mail = new Mail($reqPost['email'], [$tabpanierProducts, $tabCookie, $tabNumTicket]);
-            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison'],  new \Swift_Mailer));
+            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison'], $mailer));
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
         }
