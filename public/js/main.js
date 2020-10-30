@@ -25,6 +25,7 @@ jQuery.parseJSON = function( data ) {
 
 $(document).ready(function() {
 
+	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 
 	if(getCookie("commande") == "" || urlParams.get('commande') == "valide"){
