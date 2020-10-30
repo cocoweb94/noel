@@ -375,6 +375,8 @@ class DefaultController extends AbstractController
 
             $entityManager->flush();
 
+            $_COOKIE["commande"] = "{}";
+
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
             /*$mail = new Mail($reqPost["email"], $reqPost);
             $sendMail = $mail->sendContactMail();
