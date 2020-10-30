@@ -55,6 +55,10 @@ class DefaultController extends AbstractController
             $page = 1;
         }
 
+        if($request->query->get('commande') == "valide"){
+            unset($_COOKIE["commande"]);
+        }
+
         $repository = $this->getDoctrine()->getRepository(Product::class);
 
         //----------------- GET LIST PRODUCT PAGINATE  ----------------------
@@ -360,11 +364,15 @@ class DefaultController extends AbstractController
             $price = 0;
 
             foreach($panierProducts as $product){
+                $quantity = $tabCookie[$product->getId()];
+
                 $orderp = new OrderProduct();
                 $orderp->setOrder($order);
                 $orderp->setProduct($product);
-                $orderp->setAmount($tabCookie[$product->getId()]);
+                $orderp->setAmount($quantity);
                 $entityManager->persist($orderp);
+
+                $product->setStock($product->getStock() - $quantity);
 
                 $price += $product->getPrice() * $tabCookie[$product->getId()];
 
@@ -374,8 +382,6 @@ class DefaultController extends AbstractController
             $entityManager->persist($order);
 
             $entityManager->flush();
-
-            $_COOKIE["commande"] = "{}";
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
             /*$mail = new Mail($reqPost["email"], $reqPost);
