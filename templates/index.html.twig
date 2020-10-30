@@ -9,24 +9,31 @@
         <div id="fwslider">
             <div class="slider_container">
                 <div class="slide">
+
                     <!-- Slide image -->
-                    <img src="images/slider3.jpg" class="img-responsive" alt=""/>
+                    <img src="images/slider4.jpg" class="img-responsive" alt=""/>
                     <!-- /Slide image -->
                     <!-- Texts container -->
                     <div class="slide_content">
-                        <div class="slide_content_wrap">
+
+                        <div class="slide_content_wrap" style="display: block;">
                             <!-- Text title -->
                             <h1 class="title" style="font-size: 2.5em;">MARCH&Eacute; DE NO&Euml;L 2020 DU DIACONAT PROTESTANT</h1>
-                            <p style="color: #FFF; font-size: 1.5em;"><b>Malgr&eacute; la crise du COVID, ce site est propos&eacute; pour vous permettre de faire quelques achats de No&euml;l et de soutenir financi&egrave;rement les actions du diaconat vers les plus fragiles.</b></p>
+                            <p style="color: #FFF; font-size: 1.5em;">
+                                <b>Malgr&eacute; la crise du COVID, ce site est propos&eacute; pour vous permettre de faire quelques achats de No&euml;l et de soutenir financi&egrave;rement les actions du diaconat vers les plus fragiles.</b>
+                                <a href="{{ path('homepage', {'_fragment': 'details'}) }}" ><img src="images/fleche.png" style="display: block; width: 20%;" alt=""/></a>
+                            </p>
                             <!-- /Text title -->
                             <div class="button">
-                                <a href="">Commandez</a>
+                                <p>Pour choisir vos articles, cliquer sur un des onglets ci-dessus</p>
                             </div>
+
                         </div>
+
                     </div>
                     <!-- /Texts container -->
                 </div>
-                <!-- /Duplicate to create more slides -->
+                <!-- /Duplicate to create more slides
                 <div class="slide">
                     <img src="images/slider4.jpg" class="img-responsive" alt=""/>
                     <div class="slide_content">
@@ -38,12 +45,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!--/slide -->
             </div>
-            <div class="timers"></div>
-            <div class="slidePrev"><span></span></div>
-            <div class="slideNext"><span></span></div>
         </div>
         <!--/slider -->
     </div>
@@ -59,37 +63,38 @@
             </div>
         </div>
     </div>-->
-    <div class="shop_top">
+    <div id="details" class="shop_top">
         <div class="container">
-            <div class="col-md-4 team_bottom">
-                <ul class="team_list">
-                    <h4>LE MARCH&Eacute; DE NO&Euml;L 2020 : UNE FORMULE ADAPT&Eacute;E, MODE D'EMPLOI</h4>
-                    <li><a href="">Des objets et paniers &agrave; commander</a><p>Rendez vous dans les pages boutique (les onglets <a href="{{ path('contact') }}">brocantes</a>, <a href="{{ path('contact') }}">artisanat</a>, <a href="{{ path('contact') }}">paniers gourmands</a>), s&eacute;lectionnez les articles que vous souhaitez r&eacute;server (quantit&eacute;s limit&eacute;es ; premier arriv&eacute;, premier servi) , renseignez vos coordonn&eacute;es, et imprimez (ou notez) le bon de commande.</p></li>
-                    <li><a href="">Une loterie</a><p>Dans chacune des pages boutiques, vous pouvez &eacute;galement acheter des tickets de loterie, ou mieux un/des carnets (vous augmentez vos chances). Les tirages auront lieu les jours de retrait des articles.</p></li>
-                    <li><a href="">Payer et retirer vos achats</a><p>Le paiement et les retraits se feront sur les week-ends du mois de d&eacute;cembre (pr&eacute;cisions &agrave; venir)</p></li>
-                    <li><a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">Faire un don</a><p>Au-del&agrave; des achats que ce site vous propose, vous pouvez faire un don (possibilit&eacute; de d&eacute;duction fiscale) pour soutenir les actions du Diaconat. Rendez-vous dans l'onglet <a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">faire un don</a></p></li>
-                    <li><a href="{{ path('contact') }}">Nous contacter</a><p>Pour approvisionner et confectionner les paniers gourmands, pour r&eacute;aliser les objets d'artisanat de No&euml;l, pour g&eacute;rer la logistique des jours de retrait (accueil, stands, caisse, ...) nous avons aussi besoin de vos bras et de vos mains.</p></li>
-                </ul>
-            </div>
             <div class="col-md-8">
                 <ul class="team_list">
-                 <h4>UN MARCH&Eacute; DE NO&Euml;L QUAND MEME !</h4>
-                 <p class="m_7">Vues les contraintes sanitaires, c'est avec regret mais en conscience, que le Diaconat protestant a d&eacute;cid&eacute; de ne pas maintenir le march&eacute; de Noel dans sa forme habituelle.</p>
+                    <h4>UN MARCH&Eacute; DE NO&Euml;L QUAND MEME !</h4>
+                    <p class="m_7">Vu les contraintes sanitaires, c'est avec regret mais en conscience, que le Diaconat protestant a d&eacute;cid&eacute; de ne pas maintenir le march&eacute; de Noel dans sa forme habituelle.</p>
 
                     <p class="m_7">Mais COVID ou pas COVID, Noel est l'occasion de se rappeler, si besoin &eacute;tait, que les plus pr&eacute;caires, les petits, les sans-abris, les sans ressources ont dans cette situation de crise, d'autant plus besoin de fraternit&eacute;, mais aussi de soutien et d'aides mat&eacute;rielles.</p>
 
                     <p class="m_7">Pour assurer sa mission, le Diaconat protestant a besoin de ressources financi&egrave;res qu'il recoit en particulier au moment du march&eacute; de Noel. C'est pourquoi nous mettons en place cette ann&eacute;e une formule par Internet pour vous permettre d'acheter des objets de No&euml;l, et de marquer votre soutien financier par vos dons.</p>
 
-                    <p class="m_7">Vous trouverez dans les pages suivantes comment commander, r&eacute;server, retirer les objets que vous ach&egrave;terez, ainsi que les possibilit&eacute;s de faire vos dons (qui peuvent alors vous permettre de b&eacute;n&eacute;ficier de d&eacute;ductions fiscales).</p>
+                    <p class="m_7">Vous trouverez dans les diff&eacute;rents onglets, les articles du catalogue et comment commander puis retirer les articles que vous ach&egrave;terez, ainsi que les possibilit&eacute;s de faire vos dons (qui peuvent alors vous permettre de b&eacute;n&eacute;ficier de d&eacute;ductions fiscales).</p>
 
                     <p class="m_7">Malgr&eacute; notre regret de ne pas permettre cette ann&eacute;e les rencontres, le repas partag&eacute;, la convivialit&eacute;, le chinage parmi les stands de la brocante, des livres, des p&acirc;tisseries et confitures, des jeux ... nous comptons sur votre fid&eacute;lit&eacute; pour marquer le soutien &agrave; ce March&eacute; de No&euml;l 2020.</p>
 
-                    <p class="m_7">Rendez vous dans les pages suivantes, mais surtout, pour un march&eacute; de No&euml;l 2021 de f&ecirc;;te et de convivialit&eacute; retrouv&eacute;es.</p>
+                    <p class="m_7">Rendez vous dans les pages suivantes, mais surtout, pour un march&eacute; de No&euml;l 2021 de f&ecirc;te et de convivialit&eacute; retrouv&eacute;es.</p>
 
                     <p class="m_7">Le Diaconat protestant</p>
-                 <img src="images/diaconat.jpg" class="img-responsive" alt="" width="500" style="margin-left: 100px;">
-              </ul>
+                    <img src="images/diaconat.jpg" class="img-responsive" alt="" width="500" style="margin-left: 100px;">
+                </ul>
             </div>
+            <div class="col-md-4 team_bottom">
+                <ul class="team_list">
+                    <h4>LE MARCH&Eacute; DE NO&Euml;L 2020 : UNE FORMULE ADAPT&Eacute;E, MODE D'EMPLOI</h4>
+                    <li><a href="#">Des objets et paniers &agrave; commander</a><p>Rendez vous dans les pages boutique (les onglets <a href="{{ path('gourmandises') }}">gourmandises</a>, <a href="{{ path('articles') }}">articles de no&euml;l</a>, <a href="{{ path('loterie') }}">loterie</a>), s&eacute;lectionnez les articles que vous souhaitez r&eacute;server (quantit&eacute;s limit&eacute;es ; premier arriv&eacute;, premier servi) , renseignez vos coordonn&eacute;es, et imprimez (ou notez) le bon de commande.</p></li>
+                    <li><a href="#">Une loterie</a><p>Dans chacune des pages boutiques, vous pouvez &eacute;galement acheter des tickets de loterie, ou mieux un/des carnets (vous augmentez vos chances). Les tirages auront lieu les jours de retrait des articles.</p></li>
+                    <li><a href="#">Payer et retirer vos achats</a><p>Le paiement et les retraits se feront sur les week-ends du mois de d&eacute;cembre (pr&eacute;cisions &agrave; venir)</p></li>
+                    <li><a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">Faire un don</a><p>Au-del&agrave; des achats que ce site vous propose, vous pouvez faire un don (possibilit&eacute; de d&eacute;duction fiscale) pour soutenir les actions du Diaconat. Rendez-vous dans l'onglet <a href="http://www.diaconat-grenoble.org/faire-un-don/" target="_blank">faire un don</a></p></li>
+                    <li><a href="{{ path('contact') }}">Nous contacter</a><p>Pour approvisionner et confectionner les paniers gourmands, pour r&eacute;aliser les objets d'artisanat de No&euml;l, pour g&eacute;rer la logistique des jours de retrait (accueil, stands, caisse, ...) nous avons aussi besoin de vos bras et de vos mains.</p></li>
+                </ul>
+            </div>
+
         </div>
     </div>
     <div class="content-top">
