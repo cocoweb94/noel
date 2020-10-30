@@ -379,7 +379,7 @@ class DefaultController extends AbstractController
 
                 // create loterie ticket if in commade
                 $tabLoterie = [18 => 1, 19 => 5, 20 => 10, 21 => 20];
-                if(in_array($product->getId(), $tabLoterie)){
+                if(array_key_exists($product->getId(), $tabLoterie)){
                     for ($i = 1; $i <= $tabLoterie[$product->getId()]; $i++) {
                         $ticket = new Lotterie();
                         $ticket->setName($reqPost['nom']);
