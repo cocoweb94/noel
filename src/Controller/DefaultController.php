@@ -423,7 +423,7 @@ class DefaultController extends AbstractController
                             'price' => [$tabpanierProducts, $tabCookie, $tabNumTicket],
                             'nom' => $reqPost['nom'],
                             'prenom' => $reqPost['prenom'],
-                            'payerId' => $order->getId(),
+                            'orderId' => $order->getId(),
                             'livraison' => new \DateTime($reqPost['livraison']),
                         ]
                     ),

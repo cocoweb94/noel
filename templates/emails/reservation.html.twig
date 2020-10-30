@@ -184,7 +184,7 @@
                                     </table>
                                     <div align="center" class="img-container center autowidth" style="padding-right: 20px;padding-left: 20px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 20px;padding-left: 20px;" align="center"><![endif]-->
-                                        <div style="font-size:1px;line-height:20px"> </div><img align="center" alt="Image" border="0" class="center autowidth" src="{{ email.image('@images/euro.png') }}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: 100%; width: auto; max-height: 150px; display: block;" title="Image" width="150"/>
+                                        <div style="font-size:1px;line-height:20px"> </div><img align="center" alt="Image" border="0" class="center autowidth" src="{{ absolute_url(asset('images/logo.jpg')) }}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: 100%; width: auto; max-height: 150px; display: block;" title="Image" width="150"/>
                                         <div style="font-size:1px;line-height:20px"> </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
                                     </div>
@@ -226,7 +226,7 @@
                                     <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 40px; padding-left: 40px; padding-top: 20px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
                                     <div style="color:#555555;font-family:Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.2;padding-top:20px;padding-right:40px;padding-bottom:10px;padding-left:40px;">
                                         <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14px;">
-                                            <p style="font-size: 20px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 20px; color: #003188;"><strong>Vous avez choisi notre formule : <br/>{{ price.services|raw }} | {{ price.tarifs|raw }} | {% if price.nbheure != null %}{{ price.nbheure ~ ' H'}}  {% else %} {{ price.formule|raw }} {% endif %}</strong></span></p>
+                                            <p style="font-size: 20px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 20px; color: #003188;"><strong>Vous avez commandé : <br/></strong></span></p>
                                         </div>
                                     </div>
                                     <!--[if mso]></td></tr></table><![endif]-->
@@ -242,10 +242,10 @@
         Cher {{ prenom }},
     </span><br/>
     <span style="font-size: 12px; color: #6d89bc;">
-        Nous vous confirmons votre r&eacute;servation <strong>Easy Cab Services</strong> du {{ "now"|date("d/m/Y") }}
+        Nous vous confirmons votre commande <strong>Marché de noël</strong> du {{ "now"|date("d/m/Y") }}
     </span><br/>
     <span style="font-size: 12px; color: #6d89bc;">
-        Identifiant Paypal du payeur :  {{ payerId }}
+        Num&eacute;ro de commande :  {{ orderId }}
     </span>
                                             </p>
                                             <br/><br/>
@@ -255,24 +255,20 @@
                                             <div style="text-align: center;">
 
                                                 <div style="display: inline-block;margin-right: 10px; width: 150px;">
-                                                    <img src="{{ email.image('@images/euro.png') }}" alt="Image" class="img-fluid" width="25"><br>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
                                                     <span style="font-size:14px; color:#003188">
-                                                        {% if price.nbheure != null %}{{ price.nbheure }} H | {% endif %}
-                                                        {{ price.prix }} &euro;
-                                                        {% if price.kmsup != null %}
-                                                            <br />dont {{ price.kmsup }} km supp {{ price.prixsup }} &euro;
-                                                        {% endif %}
+                                                        toto
 
                                                     </span>
                                                 </div>
                                                 <div style="display: inline-block;margin-right: 10px; width: 150px;">
-                                                    <img src="{{ email.image('@images/km.png') }}" alt="Image" class="img-fluid" width="25"><br>
-                                                    <span style="font-size:14px; color:#003188">{{ distance }}</span>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
+                                                    <span style="font-size:14px; color:#003188">fezfez</span>
                                                 </div>
                                                 <div style="display: inline-block;margin-right: 10px; width: 150px;">
 
-                                                    <img src="{{ email.image('@images/duree.png') }}" alt="Image" class="img-fluid" width="25"><br>
-                                                    <span style="font-size:14px; color:#003188">{{ temps }}</span>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
+                                                    <span style="font-size:14px; color:#003188">fezfe</span>
                                                 </div>
                                             </div>
 
@@ -282,17 +278,17 @@
                                             <div style="text-align: center;">
 
                                                 <div style="display: inline-block;margin-right: 10px; width: 200px;">
-                                                    <img src="{{ email.image('@images/depart.png') }}" alt="Image" class="img-fluid" width="25"><br>
-                                                    <span style="font-size:14px; color:#003188; width: 150px;">{{ price.depart }}</span>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
+                                                    <span style="font-size:14px; color:#003188; width: 150px;">csqcsqcsq</span>
                                                 </div>
                                                 <div style="display: inline-block;margin-right: 10px; width: 200px;">
-                                                    <img src="{{ email.image('@images/destination.png') }}" alt="Image" class="img-fluid" width="25"><br>
-                                                    <span style="font-size:14px; color:#003188">{{ price.destination }}</span>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
+                                                    <span style="font-size:14px; color:#003188">fefezfez</span>
                                                 </div>
                                                 <div style="display: inline-block;margin-right: 10px; width: 75px;">
 
-                                                    <img src="{{ email.image('@images/date.png') }}" alt="Image" class="img-fluid" width="25"><br>
-                                                    <span style="font-size:14px; color:#003188">{{ price.date.jour|date("d/m/Y") }} {{ price.date.heure|date("H:i") }}</span>
+                                                    <img src="" alt="Image" class="img-fluid" width="25"><br>
+                                                    <span style="font-size:14px; color:#003188">fezfezfezfe</span>
                                                 </div>
                                             </div>
 
@@ -305,9 +301,9 @@
                                             <br/><br/>
                                             <p style="text-align: center; line-height: 1.5; word-break: break-word; font-family: inherit; font-size: 12px; mso-line-height-alt: 24px; margin: 0;">
     <span style="font-size: 12px; color: #6d89bc;">
-        Votre chaffeur vous attend !
+        Votre commande vous attend !
     </span><br/><br/>
-                                                <span style="font-size: 12px; color: #6d89bc;">Excellent voyage!</span>
+                                                <span style="font-size: 12px; color: #6d89bc;">Excellent découverte!</span>
                                             </p>
 
 
