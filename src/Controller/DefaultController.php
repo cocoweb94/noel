@@ -431,7 +431,8 @@ class DefaultController extends AbstractController
                 )
             ;
 
-            $mailer->send($message);
+            $mail = $mailer->send($message);
+            var_dump($mail);die;
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
         }
