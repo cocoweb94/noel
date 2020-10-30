@@ -342,7 +342,7 @@ class DefaultController extends AbstractController
 
             $panierProducts = $query->getResult();
         }else{
-            return $this->redirectToRoute("brocante",array("panier" => "vide"),302);
+            return $this->redirectToRoute("gourmandises",array("panier" => "vide"),302);
         }
 
         $form = $this->createForm(CommandeType::class);
@@ -360,7 +360,6 @@ class DefaultController extends AbstractController
             $price = 0;
 
             foreach($panierProducts as $product){
-                var_dump($product->getId());
                 $orderp = new OrderProduct();
                 $orderp->setOrder($order);
                 $orderp->setProduct($product);
@@ -368,7 +367,6 @@ class DefaultController extends AbstractController
                 $entityManager->persist($orderp);
 
                 $price += $product->getPrice() * $tabCookie[$product->getId()];
-                var_dump($price);
 
             }
 
@@ -376,7 +374,8 @@ class DefaultController extends AbstractController
             $entityManager->persist($order);
 
             $entityManager->flush();
-            var_dump($reqPost);die;
+
+            return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
             /*$mail = new Mail($reqPost["email"], $reqPost);
             $sendMail = $mail->sendContactMail();
             $mailer->send($sendMail);*/
