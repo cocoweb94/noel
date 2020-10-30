@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fec28d0-fa16-4a62-a53c-20ab8b45fac4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/contact.html.twig" afterPath="$PROJECT_DIR$/templates/contact.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html.twig" afterPath="$PROJECT_DIR$/templates/index.html.twig" />
     </list>
     <ignored path="noel.iws" />
@@ -28,9 +27,11 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44347826">
-              <caret line="21" column="176" selection-start-line="21" selection-start-column="176" selection-end-line="21" selection-end-column="176" />
-              <folding />
+            <state vertical-scroll-proportion="0.56666666">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="37" />
+              <folding>
+                <element signature="e#1218#1253#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -485,7 +486,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#1218#1253#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -680,9 +683,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44347826">
-          <caret line="21" column="176" selection-start-line="21" selection-start-column="176" selection-end-line="21" selection-end-column="176" />
-          <folding />
+        <state vertical-scroll-proportion="0.56666666">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#1218#1253#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
