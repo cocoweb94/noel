@@ -280,7 +280,7 @@ class DefaultController extends AbstractController
 
             $message = (new \Swift_Message('Demande infos Marché de noel : '. $reqPost['nom'] . ' '. $reqPost['prenom']))
                 ->setFrom($reqPost['nom'])
-                ->setTo($reqPost['email'])
+                ->setTo("fcoelho92@hotmail.com")
                 ->setBody(
                     "<p>" . $reqPost['sujet'] . "</p>" . "<p>" . $reqPost['message'] . "</p>",
                     'text/html'
@@ -288,11 +288,14 @@ class DefaultController extends AbstractController
             ;
 
             $mailer->send($message);
+
+            return $this->redirectToRoute("contact",array("mail" => "envoyer"),302);
         }
         return $this->render('contact.html.twig', [
             'form' => $form->createView(),
             'cookiepanier' => $tabCookie,
             'panier' => (count($panierProducts) > 0 ? $panierProducts : null),
+            'confenvoi' => ($request->query->get('mail') == "envoyer" ? true : false),
         ]);
     }
 
