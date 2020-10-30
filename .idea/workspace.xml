@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.61422086">
-              <caret line="417" column="92" selection-start-line="417" selection-start-column="92" selection-end-line="417" selection-end-column="92" />
+              <caret line="433" column="36" selection-start-line="433" selection-start-column="36" selection-end-line="433" selection-end-column="36" />
               <folding>
                 <element signature="e#73#119#0#PHP" expanded="true" />
               </folding>
@@ -78,8 +78,8 @@
       <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tools/Mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.923077">
-              <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+            <state vertical-scroll-proportion="-7.576923">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="51" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -853,8 +853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools/Mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077">
-          <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+        <state vertical-scroll-proportion="-7.576923">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="51" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -862,7 +862,7 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61422086">
-          <caret line="417" column="92" selection-start-line="417" selection-start-column="92" selection-end-line="417" selection-end-column="92" />
+          <caret line="433" column="36" selection-start-line="433" selection-start-column="36" selection-end-line="433" selection-end-column="36" />
           <folding>
             <element signature="e#73#119#0#PHP" expanded="true" />
           </folding>

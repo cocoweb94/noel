@@ -412,8 +412,26 @@ class DefaultController extends AbstractController
 
             $entityManager->flush();
 
-            $mail = new Mail($reqPost['email'], [$tabpanierProducts, $tabCookie, $tabNumTicket]);
-            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison']), $mailer);
+            $date = date_format(new \DateTime('now'), 'd/m/Y H:i');
+            $message = (new \Swift_Message('Confirmation de commande Marché de noël du '. $date))
+                ->setFrom('contact@diaconat-grenoble.org')
+                ->setTo($reqPost['email'])
+                ->setBody(
+                    $this->renderView(
+                        'emails/reservation.html.twig',
+                        [
+                            'price' => [$tabpanierProducts, $tabCookie, $tabNumTicket],
+                            'nom' => $reqPost['nom'],
+                            'prenom' => $reqPost['prenom'],
+                            'payerId' => $order->getId(),
+                            'livraison' => new \DateTime($reqPost['livraison']),
+                        ]
+                    ),
+                    'text/html'
+                )
+            ;
+
+            $mailer->send($message);
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
         }
