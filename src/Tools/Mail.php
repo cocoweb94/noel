@@ -3,8 +3,6 @@
 // src/Tools/Mail.php
 namespace App\Tools;
 
-use Symfony\Component\Mime\Email;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 class Mail
 {
@@ -19,7 +17,7 @@ class Mail
     public function sendContactMail(){
         $email = (new Email())
             ->from($this->email)
-            ->to('contact@easycabservices.com')
+            ->to('contact@diaconat-grenoble.org')
             ->subject('Demande d\'informations Easy Cab Services')
             ->text("Demande d'informations : Nom et prénom : " .
                 $this->context['nom'] . " " . $this->context['prenom'] . " Email : " .
@@ -30,50 +28,28 @@ class Mail
         return $email;
     }
 
-    public function sendReservationMail($nom, $prenom, $payerId, $distance, $temps){
+    public function sendReservationMail($nom, $prenom, $orderId, $livraison, \Swift_Mailer $mailer){
         $date = date_format(new \DateTime('now'), 'd/m/Y H:i');
-        $email = (new TemplatedEmail())
-            ->from('contact@easycabservices.com')
-            // TODO: CHANGE MAIL USER
-            ->to($this->email)
-            ->bcc('fcoelho92@hotmail.com')
-            ->subject('Confirmation de commande Easy Cab Services du '. $date)
-
-            // path of the Twig template to render
-            ->htmlTemplate('emails/reservation.html.twig')
-
-            // pass variables (name => value) to the template
-            ->context([
-                'price' => $this->context,
-                'nom' => $nom,
-                'prenom' => $prenom,
-                'payerId' => $payerId,
-                'distance' => $distance,
-                'temps' => $temps,
-            ])
+        $message = (new \Swift_Message('Confirmation de commande Marché de noël du '. $date))
+            ->setFrom('contact@diaconat-grenoble.org')
+            ->setTo($this->email)
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    'emails/reservation.html.twig',
+                    [
+                        'price' => $this->context,
+                        'nom' => $nom,
+                        'prenom' => $prenom,
+                        'payerId' => $orderId,
+                        'livraison' => $livraison,
+                    ]
+                ),
+                'text/html'
+            )
         ;
-        return $email;
-    }
 
-    public function sendReservationDevisMail($nom, $prenom){
-        $date = date_format(new \DateTime('now'), 'd/m/Y H:i');
-        $email = (new TemplatedEmail())
-            ->from('contact@easycabservices.com')
-            ->to($this->email)
-            ->bcc('contact@easycabservices.com')
-            ->subject('Confirmation de demande de devis Easy Cab Services du '. $date)
-
-            // path of the Twig template to render
-            ->htmlTemplate('emails/reservationDevis.html.twig')
-
-            // pass variables (name => value) to the template
-            ->context([
-                'price' => $this->context,
-                'nom' => $nom,
-                'prenom' => $prenom
-            ])
-        ;
-        return $email;
+        $mailer->send($message);
     }
 
 }

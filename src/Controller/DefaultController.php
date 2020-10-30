@@ -14,6 +14,7 @@ use App\Entity\Product;
 use App\Entity\Order;
 use App\Entity\OrderProduct;
 use App\Entity\Lotterie;
+use App\Tools\Mail;
 
 
 class DefaultController extends AbstractController
@@ -346,6 +347,7 @@ class DefaultController extends AbstractController
                 ->getQuery();
 
             $panierProducts = $query->getResult();
+            $tabpanierProducts = $query->getResult(Query::HYDRATE_ARRAY);
         }else{
             return $this->redirectToRoute("gourmandises",array("panier" => "vide"),302);
         }
@@ -410,12 +412,10 @@ class DefaultController extends AbstractController
 
             $entityManager->flush();
 
-            var_dump($tabNumTicket);die;
+            $mail = new Mail($reqPost['email'], [$tabpanierProducts, $tabCookie, $tabNumTicket]);
+            $mail->sendReservationMail($reqPost['nom'], $reqPost['prenom'], $order->getId(), new \DateTime($reqPost['livraison']));
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
-            /*$mail = new Mail($reqPost["email"], $reqPost);
-            $sendMail = $mail->sendContactMail();
-            $mailer->send($sendMail);*/
         }
 
         return $this->render('commande.html.twig', [
