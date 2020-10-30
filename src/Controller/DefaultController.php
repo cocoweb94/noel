@@ -379,6 +379,7 @@ class DefaultController extends AbstractController
 
                 // create loterie ticket if in commade
                 $tabLoterie = [18 => 1, 19 => 5, 20 => 10, 21 => 20];
+                $tabNumTicket = [];
                 if(array_key_exists($product->getId(), $tabLoterie)){
                     for ($i = 1; $i <= $tabLoterie[$product->getId()]; $i++) {
                         $ticket = new Lotterie();
@@ -395,6 +396,7 @@ class DefaultController extends AbstractController
                             $ticketExist = $repository->findOneBy(['ticket' => $numTicket]);
                         }
 
+                        $tabNumTicket[] = $numTicket;
                         $ticket->setTicket($numTicket);
                         $entityManager->persist($ticket);
 
@@ -407,6 +409,8 @@ class DefaultController extends AbstractController
             $entityManager->persist($order);
 
             $entityManager->flush();
+
+            var_dump($tabNumTicket);die;
 
             return $this->redirectToRoute("gourmandises",array("commande" => "valide"),302);
             /*$mail = new Mail($reqPost["email"], $reqPost);
